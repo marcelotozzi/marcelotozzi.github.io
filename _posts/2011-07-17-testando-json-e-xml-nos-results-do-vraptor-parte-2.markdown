@@ -2,15 +2,24 @@
 layout: post
 title: Testando JSON e XML nos Results do VRaptor - Parte 2
 tags:
-- Java
-- JSON
-- JUnit
-- Mock
-- Mockito
-- Pessoal
-- TDD
-- VRaptor
-- XML
+- title: Java
+  slug: java
+- title: JSON
+  slug: json
+- title: JUnit
+  slug: junit
+- title: Mock
+  slug: mock
+- title: Mockito
+  slug: mockito
+- title: Pessoal
+  slug: pessoal
+- title: TDD
+  slug: tdd
+- title: VRaptor
+  slug: vraptor
+- title: XML
+  slug: xml
 status: publish
 type: post
 published: true

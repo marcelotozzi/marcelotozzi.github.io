@@ -2,11 +2,16 @@
 layout: post
 title: VRaptor - Entre interceptors e annotations!
 tags:
-- Annotation
-- Interceptor
-- Java
-- Pessoal
-- VRaptor
+- title: Annotation
+  slug: annotation
+- title: Interceptor
+  slug: interceptor
+- title: Java
+  slug: java
+- title: Pessoal
+  slug: pessoal
+- title: VRaptor
+  slug: vraptor
 status: publish
 type: post
 published: true

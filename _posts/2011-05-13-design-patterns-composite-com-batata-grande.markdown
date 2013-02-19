@@ -2,9 +2,12 @@
 layout: post
 title: Design Patterns - Composite, com batata grande...
 tags:
-- Design Patterns
-- Java
-- Padrões Estruturais
+- title: Design Patterns
+  slug: design-patterns
+- title: Java
+  slug: java
+- title: Padrões Estruturais
+  slug: padroes-estruturais
 status: publish
 type: post
 published: true

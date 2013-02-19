@@ -2,7 +2,8 @@
 layout: post
 title: Bem vindos!
 tags:
-- Pessoal
+- title: Pessoal
+  slug: pessoal
 status: publish
 type: post
 published: true

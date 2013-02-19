@@ -2,11 +2,14 @@
 layout: post
 title: Design Patterns - Abstract Factory, temos que pegar, Pokémon
 tags:
-- Design Patterns
-- Java
-- mimimi
-- Padrões de Criacão
-- Padrões de Criação
+- title: Design Patterns
+  slug: design-patterns
+- title: Java
+  slug: java
+- title: mimimi
+  slug: mimimi
+- title: Padrões de Criacão
+  slug: padroes-de-criacao
 status: publish
 type: post
 published: true

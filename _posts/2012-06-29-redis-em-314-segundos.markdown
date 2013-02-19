@@ -2,10 +2,14 @@
 layout: post
 title: Redis em 314 segundos
 tags:
-- C++
-- Key-Value
-- NoSQL
-- Redis
+- title: C++
+  slug: c-plus-plus
+- title: Key-Value
+  slug: key-value
+- title: NoSQL
+  slug: nosql
+- title: Redis
+  slug: redis
 status: publish
 type: post
 published: true

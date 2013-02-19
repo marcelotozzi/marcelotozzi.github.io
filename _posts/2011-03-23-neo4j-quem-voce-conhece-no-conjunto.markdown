@@ -2,9 +2,12 @@
 layout: post
 title: Neo4j - Quem você conhece no conjunto?
 tags:
-- Java
-- Neo4j
-- NoSQL
+- title: Java
+  slug: java
+- title: Neo4j
+  slug: neo4j
+- title: NoSQL
+  slug: nosql
 status: publish
 type: post
 published: true
