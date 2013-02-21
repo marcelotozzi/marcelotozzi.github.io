@@ -41,7 +41,7 @@ O exemplo mais clássico é uma interface para usuário, na qual conforme uma co
 
 Mais do que ficar explicando, vamos para o que importa.Mas como eu gosto de exemplos diferentes, vou fazer um bem bizarro. :P
 <h3>Pokémon, temos que pegar...</h3>
-<p style="text-align: center;"><a href="http://marcelotozzi.com.br/wp-content/uploads/2011/05/eevee.gif" target="_blank"><img class="size-full wp-image-170 aligncenter" title="eevee" src="http://marcelotozzi.com.br/wp-content/uploads/2011/05/eevee.gif" alt="" width="209" height="207" /></a></p>
+<p style="text-align: center;"><a href="/images_posts/eevee.gif" target="_blank"><img class="size-full wp-image-170 aligncenter" title="eevee" src="/images_posts/eevee.gif" alt="" width="209" height="207" /></a></p>
 Tenho este pokémon, <a title="Eevee" href="http://pt.wikipedia.org/wiki/Fam%C3%ADlia_de_Eevee" target="_blank">Eevee</a>, vou querer evoluí-lo. E como eu sou um grande mestre-pokémon ele já está para evoluir. E as evoluções naturais dele são Espeon e Umbreon (peguei as informações <a href="http://pt.wikipedia.org/wiki/Fam%C3%ADlia_de_Eevee" target="_blank">aqui</a>). Porém ele tem restrições, quando ele estiver no ponto de evoluir, se for dia, evoluir para Espeon, se for noite para Umbreon.
 
 Antes de tudo vou precisar do meu Pokémon

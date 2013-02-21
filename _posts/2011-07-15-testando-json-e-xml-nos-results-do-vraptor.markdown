@@ -30,7 +30,7 @@ meta:
 ---
 &nbsp;
 
-<a href="http://marcelotozzi.com.br/wp-content/uploads/2011/07/designalldll.jpeg"><img class="alignright size-medium wp-image-375" title="designalldll" src="http://marcelotozzi.com.br/wp-content/uploads/2011/07/designalldll-300x300.jpg" alt="" width="300" height="300" /></a>Antes de tudo uma historinha! Um dia desses queria testar  alguns métodos que criei utilizando <a href="http://vraptor.caelum.com.br/" target="_blank">VRaptor</a>, até ai tudo bem. Chamando eles num teste unitário eu conseguiria facilmente pois eu consigo "pegar" os objetos que o controller insere na resposta que vem dentro do <code>Result</code>. Porém me deparei com os testes que retornavam objetos serializados em <a href="http://www.json.org/" target="_blank">JSON</a> dentro do Result.
+<a href="/images_posts/designalldll.jpeg"><img class="alignright size-medium wp-image-375" title="designalldll" src="/images_posts/designalldll-300x300.jpg" alt="" width="300" height="300" /></a>Antes de tudo uma historinha! Um dia desses queria testar  alguns métodos que criei utilizando <a href="http://vraptor.caelum.com.br/" target="_blank">VRaptor</a>, até ai tudo bem. Chamando eles num teste unitário eu conseguiria facilmente pois eu consigo "pegar" os objetos que o controller insere na resposta que vem dentro do <code>Result</code>. Porém me deparei com os testes que retornavam objetos serializados em <a href="http://www.json.org/" target="_blank">JSON</a> dentro do Result.
 
 O VRaptor te disponibiliza um <code>Result</code> "mockado" para fazer seus testes mas não funciona com esse tipo de serialização(pelo menos nos meus testes não "funfou"). Depois de buscar um pouco no código do VRaptor não encontrei o que me ajudaria nisso. Já estava pensando em fazer eu mesmo um Mock para isso até que pensei: "<strong>GITHUB</strong>, será que no Git tem alguma coisa que não tem nessa versão que eu estou usando?".
 
@@ -198,4 +198,4 @@ Nessa primeira parte o terreno esta preparado. No próximo post vou mostrar como
 
 &nbsp;
 
-<a href="http://marcelotozzi.com.br/wp-content/uploads/2011/07/epic-meal-time-bacon.jpg"><img class="aligncenter size-full wp-image-357" title="epic-meal-time-bacon" src="http://marcelotozzi.com.br/wp-content/uploads/2011/07/epic-meal-time-bacon.jpg" alt="" width="550" height="300" /></a>
+<a href="/images_posts/epic-meal-time-bacon.jpg"><img class="aligncenter size-full wp-image-357" title="epic-meal-time-bacon" src="/images_posts/epic-meal-time-bacon.jpg" alt="" width="550" height="300" /></a>

@@ -16,7 +16,7 @@ meta:
   _thumbnail_id: '219'
   dsq_thread_id: '303094814'
 ---
-Depois do <strong><a title="Design Patterns – Abstract Factory, temos que pegar, Pokémon" href="http://marcelotozzi.com.br/2011/05/design-patterns-abstract-factory-temos-que-pegar-pokemon/" target="_blank">Abstract Factory</a></strong> vamos para outro pattern simples. O <strong>Composite</strong>.
+Depois do <strong><a title="Design Patterns – Abstract Factory, temos que pegar, Pokémon" href="/blog/design-patterns-abstract-factory-temos-que-pegar-pokemon/" target="_blank">Abstract Factory</a></strong> vamos para outro pattern simples. O <strong>Composite</strong>.
 
 O pattern Composite server para que os componentes individuais e composições de objetos sejam tratados de forma parecida.
 
@@ -30,7 +30,7 @@ A parte principal do pattern Composite é a criação de uma classe abstrata/int
 O cliente usa a interface para interagir  com os objetos do componente composto. Quando é um objeto individual a chamada de um método é tratada diretamente no objeto. Porém se é um objeto composto,  ele repassa a chamada de método para seus componentes filhos.
 
 Esse pattern deixa mais fácil  adicionar novos componentes sem ter que alterar os "clientes" que usam os componentes, porém isso pode atrapalhar se você quiser limitar quais tipos de objetos podem fazer parte de uma composição. Ai você terá que usar verificações e testes em tempo de execução.
-<h3><a href="http://marcelotozzi.com.br/wp-content/uploads/2011/05/enjoado_de_big_mac.jpg" target="_blank"><img class="alignright size-medium wp-image-219" title="enjoado_de_big_mac" src="http://marcelotozzi.com.br/wp-content/uploads/2011/05/enjoado_de_big_mac-300x237.jpg" alt="" width="300" height="237" /></a></h3>
+<h3><a href="/images_posts/enjoado_de_big_mac.jpg" target="_blank"><img class="alignright size-medium wp-image-219" title="enjoado_de_big_mac" src="/images_posts/enjoado_de_big_mac-300x237.jpg" alt="" width="300" height="237" /></a></h3>
 <h3>Batata frita grande acompanha, senhor?</h3>
 Bora fazer um exemplo então. E continuando com os exemplos doidões, quem não curte um hamburguer maroto?
 

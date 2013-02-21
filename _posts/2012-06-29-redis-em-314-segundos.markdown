@@ -19,7 +19,7 @@ meta:
   dsq_thread_id: '745375962'
 ---
 <p>Um "fast post" pra desenferrujar.</p>
-<p><a href="http://marcelotozzi.com.br/wp-content/uploads/2012/06/003MRD_Randall_Duk_Kim_003.jpeg"><img src="http://marcelotozzi.com.br/wp-content/uploads/2012/06/003MRD_Randall_Duk_Kim_003.jpeg" alt="" title="003MRD_Randall_Duk_Kim_003" width="852" height="480" class="aligncenter size-full wp-image-487" /></a></p>
+<p><a href="/images_posts/003MRD_Randall_Duk_Kim_003.jpeg"><img src="/images_posts/003MRD_Randall_Duk_Kim_003.jpeg" alt="" title="003MRD_Randall_Duk_Kim_003" width="852" height="480" class="aligncenter size-full wp-image-487" /></a></p>
 <p>Se você tem vivido dentro de uma caverna nos últimos anos não vai saber do que se trata o termo NoSQL e o que diabos é Redis.<span style="color: #000000;"> <del>(Mas no fundo você sabe, salvar dados como arquivo, memória, etc)</del></span><br /><br />
 Se você ainda não buscou <a href="http://redis.io/" target="_blank">Redis</a> no Google pra saber do que estou falando eu digo: Redis é um banco de dados chave-valor open-source escrito em C que pode armazenar string, hashes, lists, sets and sorted sets. (copiei do site do <a href="http://redis.io/" target="_blank">Redis</a> :D)</p>
 <p>Ele tem várias features como Pipelining, Publish/Subscribe, Transactions, Insert Massivo, Replicação, SnapShotting e <a href="http://redis.io/documentation" target="_blank">outras "coisinhas"</a>.</p>

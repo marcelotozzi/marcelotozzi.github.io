@@ -50,7 +50,7 @@ public boolean accepts(ResourceMethod method) {
 			    &amp;&amp; !method.getMethod().getName().equals("authenticates"));
 }</pre>
 method.getMethod() retorna o método java que está sendo chamado e method.getResource().getType() a classe que está sendo executada.
-<p style="text-align: justify;"><a href="http://marcelotozzi.com.br/wp-content/uploads/2011/05/philosoraptor.jpg"><img class="alignright size-medium wp-image-294" title="philosoraptor" src="http://marcelotozzi.com.br/wp-content/uploads/2011/05/philosoraptor-300x300.jpg" alt="" width="350" height="350" /></a>Porém se eu precisar interceptar e liberar mais métodos e controllers nesse accepts, ficaria uma coisa bem feia e chata de mexer. Então o que fiz?
+<p style="text-align: justify;"><a href="/images_posts/philosoraptor.jpg"><img class="alignright size-medium wp-image-294" title="philosoraptor" src="/images_posts/philosoraptor-300x300.jpg" alt="" width="350" height="350" /></a>Porém se eu precisar interceptar e liberar mais métodos e controllers nesse accepts, ficaria uma coisa bem feia e chata de mexer. Então o que fiz?
 Para não ter q ficar alterando meu interceptor a todo método ou controller que eu criar ou quiser liberar resolvi criar annotations para facilitar a verificação. Uma annotation para verificar se aquele recurso deve ser interceptado chamada @InterceptResource.
 Beleza, ai todos os métodos do controller anotado são interceptados, mas e os métodos que eu quero liberar, como o show dito anteriormente, como ficam? Pra solucionar isso criei outra annotation chamada @NoInterceptMethod para verificar também no interceptor se aquele método pode ser acessado sem verificação de acesso. Mas vamos ver como eu usei.</p>
 A annotation @InterceptResource.

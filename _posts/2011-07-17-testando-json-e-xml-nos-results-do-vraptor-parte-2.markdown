@@ -28,9 +28,9 @@ meta:
   _thumbnail_id: '415'
   dsq_thread_id: '360856452'
 ---
-<a href="http://marcelotozzi.com.br/wp-content/uploads/2011/09/jason_up.jpg"><img class="aligncenter size-full wp-image-415" title="jason_up" src="http://marcelotozzi.com.br/wp-content/uploads/2011/09/jason_up.jpg" alt="" width="520" height="347" /></a>
+<a href="/images_posts/jason_up.jpg"><img class="aligncenter size-full wp-image-415" title="jason_up" src="/images_posts/jason_up.jpg" alt="" width="520" height="347" /></a>
 
-Continuando com o código do <a title="Testando JSON e XML nos Results do VRaptor" href="http://marcelotozzi.com.br/2011/07/testando-json-e-xml-nos-results-do-vraptor/" target="_blank">post anterior</a> ...
+Continuando com o código do <a title="Testando JSON e XML nos Results do VRaptor" href="/blog/testando-json-e-xml-nos-results-do-vraptor/" target="_blank">post anterior</a> ...
 
 Agora é criar uma classe de testes separada para os testes de serialização. Desta vez usei o <code>MockSerializationResult</code> que é o mock que o VRaptor 3.4 disponibiliza e como eu disse no post anterior não existia no SNAPSHOT 3.3.
 <pre class="brush:java">public class SerializeEventoControllerTest {

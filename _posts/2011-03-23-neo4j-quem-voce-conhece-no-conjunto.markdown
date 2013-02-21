@@ -16,7 +16,7 @@ meta:
   _thumbnail_id: '35'
   dsq_thread_id: '261494384'
   socialize_text: If you enjoyed this post, please consider <a href="#comments">leaving
-    a comment</a> or <a href="http://marcelotozzi.com.br/feed/" title="Syndicate this
+    a comment</a> or <a href="/feed" title="Syndicate this
     site using RSS">subscribing to the <abbr title="Really Simple Syndication">RSS</abbr>
     feed</a> to have future articles delivered to your feed reader.
   socialize: '1,2,11,12,19,23'
@@ -34,9 +34,9 @@ Os acessos ao grafo são administrador por um sistema de transação <a href="ht
 
 Vamos dar uma "testada" nesse treco então:
 <h2>Corre, Paul Tergat, corre!</h2>
-<a href="http://marcelotozzi.com.br/wp-content/uploads/2011/03/paul-tergat.jpg" target="_blank"><img class="alignnone size-medium wp-image-35" title="paul-tergat" src="http://marcelotozzi.com.br/wp-content/uploads/2011/03/paul-tergat-300x237.jpg" alt="" width="300" height="237" /></a>
+<a href="/images_posts/paul-tergat.jpg" target="_blank"><img class="alignnone size-medium wp-image-35" title="paul-tergat" src="/images_posts/paul-tergat-300x237.jpg" alt="" width="300" height="237" /></a>
 <p style="text-align: left;">Vamos então fazer algo em Java. Eu sei que você "marotamente" já fez o <a href="http://neo4j.org/download">download do Neo4j</a> e já criou um projeto no <a href="http://www.eclipse.org/" target="_blank">Eclipse</a> e jogou nele as libs.</p>
-<p style="text-align: left;"><a href="http://marcelotozzi.com.br/wp-content/uploads/2011/03/libs.png"></a><a href="http://marcelotozzi.com.br/wp-content/uploads/2011/03/libs.jpg" target="_blank"><img class="alignnone size-full wp-image-49" title="libs" src="http://marcelotozzi.com.br/wp-content/uploads/2011/03/libs.jpg" alt="" width="368" height="355" /></a></p>
+<p style="text-align: left;"><a href="/images_posts/libs.png"></a><a href="/images_posts/libs.jpg" target="_blank"><img class="alignnone size-full wp-image-49" title="libs" src="/images_posts/libs.jpg" alt="" width="368" height="355" /></a></p>
 <p style="text-align: left;">&nbsp;</p>
 <p style="text-align: left;">Agora vamos criar um Service que ira acessar nosso banco de dados em grafo.</p>
 <!-- p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px Monaco} span.s1 {color: #9a1867} --> <!-- p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px Monaco} p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px Monaco; min-height: 15.0px} p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px Monaco; color: #9a1867} span.s1 {color: #9a1867} span.s2 {color: #000000} span.s3 {color: #0023c7} span.s4 {color: #382ffa} span.Apple-tab-span {white-space:pre} -->
