@@ -1,0 +1,26 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Marcelo Tozzi</title>
+ <link href="http://marcelotozzi.com/atom.xml" rel="self"/>
+ <link href="http://marcelotozzi.com/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://marcelotozzi.com/</id>
+ <author>
+   <name>Marcelo Tozzi</name>
+   <email>marcelotozzidelima@gmail.com</email>
+ </author>
+
+ {% for post in site.posts limit:20 offset:0 %}
+ <entry>
+   <title>{{ post.title }}</title>
+   <link href="http://marcelotozzi.com{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>http://marcelotozzi.com{{ post.id }}</id>
+   <content type="html">{{ post.content | xml_escape }}</content>
+ </entry>
+ {% endfor %}
+</feed>
