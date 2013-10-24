@@ -10,7 +10,7 @@ tags:
   slug: nosql
 - title: Redis
   slug: redis
-categories: c++ key-value nosql redis
+categories: C++,Key-Value,NoSQL,Redis
 ---
 Um fast post pra desenferrujar.
 

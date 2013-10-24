@@ -20,7 +20,7 @@ tags:
   slug: vraptor
 - title: XML
   slug: xml
-categories: java json junit mock mockito tdd vraptor xml
+categories: Java,Json,Junit,Mock,Mockito,TDD,Vraptor,XML
 ---
 
 ![json]({{ site.url }}/assets/designalldll-300x300.jpg)

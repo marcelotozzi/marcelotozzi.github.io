@@ -9,7 +9,7 @@ tags:
 - title: NoSQL
   slug: nosql
 date:   2011-03-23 01:32:30
-categories: java neo4j nosql
+categories: Java,Neo4j,NoSQL
 ---
 Quando estava na faculdade tinha aula de grafos e pensava: "Pow, beleza, busca em profundidade, busca em largura, entendi, mas quando vou usar isso?". Esta aí! O <a title="Neo4j" href="http://neo4j.org/" target="_blank">Neo4j</a> respondendo minha pergunta.
 
