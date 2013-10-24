@@ -1,17 +1,11 @@
 ---
 layout: post
-title: Bem vindos!
+title: "Bem vindos!"
 tags:
 - title: Pessoal
   slug: pessoal
-status: publish
-type: post
-published: true
-meta:
-  _edit_last: '1'
-  _wp_old_slug: ''
-  dsq_thread_id: '244550368'
-  _thumbnail_id: '14'
+date:   2010-10-30 01:32:30
+categories: pessoal
 ---
 Nesse blog pretendo postar minhas opiniões, coisas interessantes que descobrir e tudo mais.
 

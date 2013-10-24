@@ -16,33 +16,37 @@ meta:
   _thumbnail_id: '219'
   dsq_thread_id: '303094814'
 ---
-Depois do <strong><a title="Design Patterns – Abstract Factory, temos que pegar, Pokémon" href="/blog/design-patterns-abstract-factory-temos-que-pegar-pokemon/" target="_blank">Abstract Factory</a></strong> vamos para outro pattern simples. O <strong>Composite</strong>.
+Depois do **<a title="Design Patterns – Abstract Factory, temos que pegar, Pokémon" href="/blog/design-patterns-abstract-factory-temos-que-pegar-pokemon/" target="_blank">Abstract Factory</a>** vamos para outro pattern simples. O **Composite**.
 
 O pattern Composite server para que os componentes individuais e composições de objetos sejam tratados de forma parecida.
 
 A parte principal do pattern Composite é a criação de uma classe abstrata/interface que representa tanto os componentes individuais como as composições. Essa classe também define métodos que os objetos compartilham, como métodos para administrar seus componentes/filhos.
 
-<strong>Aplicabilidade:</strong>
-<ul>
-	<li>Quando quiser tratar igualmente objetos ignorando a diferença entre composições de objetos e componentes individuais .</li>
-	<li>Quando quiser representar hierarquias partes-todo(é parte de) de objetos.</li>
-</ul>
+Aplicabilidade:
+---------------
+
+* Quando quiser tratar igualmente objetos ignorando a diferença entre composições de objetos e componentes individuais .
+* Quando quiser representar hierarquias partes-todo(é parte de) de objetos.
+
 O cliente usa a interface para interagir  com os objetos do componente composto. Quando é um objeto individual a chamada de um método é tratada diretamente no objeto. Porém se é um objeto composto,  ele repassa a chamada de método para seus componentes filhos.
 
 Esse pattern deixa mais fácil  adicionar novos componentes sem ter que alterar os "clientes" que usam os componentes, porém isso pode atrapalhar se você quiser limitar quais tipos de objetos podem fazer parte de uma composição. Ai você terá que usar verificações e testes em tempo de execução.
-<h3><a href="/images_posts/enjoado_de_big_mac.jpg" target="_blank"><img class="alignright size-medium wp-image-219" title="enjoado_de_big_mac" src="/images_posts/enjoado_de_big_mac-300x237.jpg" alt="" width="300" height="237" /></a></h3>
-<h3>Batata frita grande acompanha, senhor?</h3>
+
+![bigmac]({{ site.url }}/assets/enjoado_de_big_mac-300x237.jpg)
+
+Batata frita grande acompanha, senhor?
+======================================
 Bora fazer um exemplo então. E continuando com os exemplos doidões, quem não curte um hamburguer maroto?
 
 Então vamos fazer um belo Whooper com queijo usando o padão Composite para compor nosso rango.
 
 Primeiro vamos criar a interface citada acima que vai ser utilizada como "contrato" tanto para o componente individual quando para o componente composto. Vou definir um método que deve retornar as calorias do alimento e outro pra mostrar o nome dele.
-<pre class="brush:java">public interface Alimento {
+{% highlight java %}public interface Alimento {
 	public int retornaCalorias();
 	public void mostrar();
-}</pre>
+}{% endhighlight %}
 Precisamos também dos componentes individuais.Vamos criar todos, cada um deles sobreescreve os métodos da interface.
-<pre class="brush:java">public class Alface implements Alimento {
+{% highlight java %}public class Alface implements Alimento {
 	@Override
 	public void mostrar() {
 		System.out.println("Alface");
@@ -124,9 +128,9 @@ public class Tomate implements Alimento {
 	public int retornaCalorias() {
 		return 100;
 	}
-}</pre>
+}{% endhighlight %}
 Agora vamos começar com o nosso teste e ir incrementando conforme necessário. Vou criar alguns componentes/ingredientes únicos no teste.
-<pre class="brush:java">public class BurgerKingTest {
+{% highlight java %}public class BurgerKingTest {
 	@Test
 	public void deveriaMontarUmWhopperComQueijoImprimirNoConsoleERetornar800Kcal() {
 		Alimento hamburguer = new Hamburguer();
@@ -141,15 +145,15 @@ Agora vamos começar com o nosso teste e ir incrementando conforme necessário. 
 
 		Assert.assertEquals(800, rango.retornaCalorias());
 	}
-}</pre>
+}{% endhighlight %}
 O codigo acima tem uma coisa de que ainda não falamos, a classe Rango, sem ela não vamos conseguir fazer esse teste mega bizarro passar.Então...
-<pre class="brush:java">import java.util.ArrayList;
+{% highlight java %}import java.util.ArrayList;
 import java.util.List;
 
 import br.com.marcelotozzi.designpatterns.composite.ingredientes.Alimento;
 
 public class Rango implements Alimento {
-	private List&lt;Alimento&gt; ingredientes = new ArrayList&lt;Alimento&gt;();
+	private List<Alimento> ingredientes = new ArrayList<Alimento>();
 	private int calorias;
 
 	@Override
@@ -170,12 +174,13 @@ public class Rango implements Alimento {
 		}
 		return calorias;
 	}
-}</pre>
+}{% endhighlight %}
+
 Essa classe implementa a interface Alimento e sobre escreve seus métodos, porém , diferente dos componentes individuais de ingredientes, essa classe é um componente composto.Os métodos em vez de chamar algo dentro da classe Rango, delega a chamada para os seus componentes.
 
 Agora só precisamos terminar nosso teste.
-<pre class="brush:java">
-<pre class="brush:java">public class BurgerKingTest {
+
+{% highlight java %}public class BurgerKingTest {
 	@Test
 	public void deveriaMontarUmWhopperComQueijoImprimirNoConsoleERetornar800Kcal() {
 		Alimento hamburguer = new Hamburguer();
@@ -205,6 +210,6 @@ Agora só precisamos terminar nosso teste.
 		Assert.assertEquals(800, whopperComQueijo.retornaCalorias());
 		Assert.assertEquals(800, rango.retornaCalorias());
 	}
-}</pre>
-</pre>
+}{% endhighlight %}
+
 Basicamente adicione o nosso whooper(que é um objeto composto) em um outro objeto composto rango. Os dois devem retornar o mesmo valor calorias. Qualquer um dos nossos objetos nesse teste podem ser tratados igualmente.
