@@ -1,24 +1,9 @@
 ---
 layout: default
 ---
+<h2>{{ page.title }}</h2>
+<p class="meta">{{ page.date | date_to_string }}</p>
 
-<div id="post">
-	<h2 class="post_title">{{ page.title}}</h2>
-    <hr/>
-	<p class="post-date">
-        <span class="date">{{ page.date | date: "%d/%m/%Y" }}</span>
-    </p>
-	<p></p>
-	{{ content }}
-    <h3><a href="/">Voltar</a></h3>
+<div class="post">
+{{ content }}
 </div>
-<a name="comments"></a>
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'marcelotozzi';
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>

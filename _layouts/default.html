@@ -1,79 +1,47 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<meta name="description" content="{{ page.description }}" />
-		<meta name="keywords" content="desenvolvimento,produtos,web,cloud,negócios,idéias,práticas,java,nosql,redis,cassandra,vraptor,{{page.keywords | join: ','}}" />
-		<meta name="google-translate-customization" content="38307ca43e11120-f99fe98f1ddca534-g5782b56983e5a51a-13"></meta>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
 
-		{% assign sep = "" %}
-		{% if page.title %}
-			{% assign sep = " - " %}
-		{% endif %}
-		<title>Marcelo Tozzi{{ sep }}{{ page.title }}</title>
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
 
-		<!-- blog style -->
-		<link rel="stylesheet" href="/css/site.css" type="text/css"/>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css">
 
-		<script type="text/javascript">
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-11160168-1']);
-		  _gaq.push(['_trackPageview']);
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/other.css">
 
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-            var WRInitTime=(new Date()).getTime();
-		</script>
-	</head>
+    </head>
+    <body>
 
-	<body>
-    <div id="title">
-      <h1 class="title"><a href="/">Marcelo Tozzi</a></h1>
-      <p class="title_contents">
-        {mais um blog perdido}
-      </p>
-    </div>
-    <div id="blog_content">
-  		<div id="posts_home">
-  			{{ content }}
-  		</div>
-    </div>
-		<div class="footer">
-			<div class="footer_content">
-				<ul>
-					<li><a href="/about/">eu</a></li>
-					<li><a href="http://www.about.me/marcelotozzi">About me</a></li>
-					<li><a href="http://twitter.com/marcelotozzi">@marcelotozzi</a></li>
-					<li><a href="http://github.com/marcelotozzi">github</a></li>
-					<li><a href="https://gist.github.com/marcelotozzi">gists</a></li>
-					<li><a href="http://coderwall.com/marcelotozzi">coderwall</a></li>
-					<li class="designed" title="I don't always do design but when I do I do it like a boss">designed by @vquaiato</li>
-					<li class="feed"><a href="/atom.xml">Feed</a></li>
-				</ul>
-			</div>
-			<div class="search">
-			            <!-- SiteSearch Google -->
-			            <form method="GET" action="http://www.google.com/search">
-			              <input type="hidden" name="ie" value="UTF-8">
-			              <input type="hidden" name="oe" value="UTF-8">
-			              <input class="field" type="text" name="q" size="15" maxlength="255" value="" placeholder="pesquisar...">
-			              <input class="button" type="submit" name="btnG" value="go" title="Search">
-			              <input type="hidden" name="domains" value="marcelotozzi.com">
-			              <input type="hidden" name="sitesearch" value="">
-			              <input type="hidden" name="sitesearch" value="marcelotozzi.com">
-			            </form>
-			          </div>
-					</div>
-		<a href="http://github.com/marcelotozzi/marcelotozzi.github.com"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://a248.e.akamai.net/camo.github.com/bec6c51521dcc8148146135149fe06a9cc737577/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
-		<div id="google_translate_element"></div><script type="text/javascript">
-		function googleTranslateElementInit() {
-		  new google.translate.TranslateElement({pageLanguage: 'pt', includedLanguages: 'de,en,es,fr', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-11160168-1'}, 'google_translate_element');
-		}
-		</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-	</body>
+        <div class="site">
+          <div class="header">
+            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+            <a class="extra" href="/">home</a>
+          </div>
+
+          {{ content }}
+
+          <div class="footer">
+            <div class="contact">
+              <p>
+                Marcelo Tozzi<br />
+                Software Developer<br />
+                marcelotozzidelima@gmail.com
+              </p>
+            </div>
+            <div class="contact">
+              <p>
+                <a href="https://github.com/marcelotozzi" target="_blank">github.com/marcelotozzi</a><br />
+                <a href="https://twitter.com/marcelotozzi" target="_blank">twitter.com/marcelotozzi</a><br />
+              </p>
+            </div>
+          </div>
+        </div>
+
+    </body>
 </html>

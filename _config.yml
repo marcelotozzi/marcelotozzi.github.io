@@ -1,3 +1,8 @@
+name: Marcelo Tozzi
+markdown: redcarpet
 pygments: true
-markdown: rdiscount
+timezone: America/Sao_Paulo
+show_drafts: false
+relative_permalinks: true
 permalink: /blog/:title
+paginate_path: 'page:num'

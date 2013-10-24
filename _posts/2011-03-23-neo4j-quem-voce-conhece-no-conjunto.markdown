@@ -8,18 +8,8 @@ tags:
   slug: neo4j
 - title: NoSQL
   slug: nosql
-status: publish
-type: post
-published: true
-meta:
-  _edit_last: '1'
-  _thumbnail_id: '35'
-  dsq_thread_id: '261494384'
-  socialize_text: If you enjoyed this post, please consider <a href="#comments">leaving
-    a comment</a> or <a href="/feed" title="Syndicate this
-    site using RSS">subscribing to the <abbr title="Really Simple Syndication">RSS</abbr>
-    feed</a> to have future articles delivered to your feed reader.
-  socialize: '1,2,11,12,19,23'
+date:   2011-03-23 01:32:30
+categories: java neo4j nosql
 ---
 Quando estava na faculdade tinha aula de grafos e pensava: "Pow, beleza, busca em profundidade, busca em largura, entendi, mas quando vou usar isso?". Esta aí! O <a title="Neo4j" href="http://neo4j.org/" target="_blank">Neo4j</a> respondendo minha pergunta.
 
@@ -33,17 +23,27 @@ Nos bancos de dados relacionais podem existir estruturas de dados cheias de join
 Os acessos ao grafo são administrador por um sistema de transação <a href="http://en.wikipedia.org/wiki/ACID" target="_blank">ACID</a>. Para navegar pelo grafo é utilizada a <a href="http://wiki.neo4j.org/content/Traversal" target="_blank">API Traverser</a>. O Neo4j também tem suporte a <a href="http://components.neo4j.org/neo4j-index/stable/" target="_blank">indíces</a> e também oferece para isso integração com o <a href="http://components.neo4j.org/neo4j-lucene-index/stable/" target="_blank">Lucene</a>.
 
 Vamos dar uma "testada" nesse treco então:
-<h2>Corre, Paul Tergat, corre!</h2>
-<a href="/images_posts/paul-tergat.jpg" target="_blank"><img class="alignnone size-medium wp-image-35" title="paul-tergat" src="/images_posts/paul-tergat-300x237.jpg" alt="" width="300" height="237" /></a>
-<p style="text-align: left;">Vamos então fazer algo em Java. Eu sei que você "marotamente" já fez o <a href="http://neo4j.org/download">download do Neo4j</a> e já criou um projeto no <a href="http://www.eclipse.org/" target="_blank">Eclipse</a> e jogou nele as libs.</p>
-<p style="text-align: left;"><a href="/images_posts/libs.png"></a><a href="/images_posts/libs.jpg" target="_blank"><img class="alignnone size-full wp-image-49" title="libs" src="/images_posts/libs.jpg" alt="" width="368" height="355" /></a></p>
-<p style="text-align: left;">&nbsp;</p>
-<p style="text-align: left;">Agora vamos criar um Service que ira acessar nosso banco de dados em grafo.</p>
-<!-- p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px Monaco} span.s1 {color: #9a1867} --> <!-- p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px Monaco} p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px Monaco; min-height: 15.0px} p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px Monaco; color: #9a1867} span.s1 {color: #9a1867} span.s2 {color: #000000} span.s3 {color: #0023c7} span.s4 {color: #382ffa} span.Apple-tab-span {white-space:pre} -->
-<pre class="brush:java">public class CorridaService {
-}</pre>
+
+Corre, Paul Tergat, corre!
+-------------------------
+
+![padrao]({{ site.url }}/assets/paul-tergat-300x237.jpg)
+
+Vamos então fazer algo em Java. Eu sei que você "marotamente" já fez o <a href="http://neo4j.org/download">download do Neo4j</a> e já criou um projeto no <a href="http://www.eclipse.org/" target="_blank">Eclipse</a> e jogou nele as libs.
+
+![padrao]({{ site.url }}/assets/libs.jpg)
+
+Agora vamos criar um Service que ira acessar nosso banco de dados em grafo.</p>
+
+{% highlight java %}
+public class CorridaService {
+}
+{% endhighlight %}
+
 E claro um teste deste cara.
-<pre class="brush:java">public class CorridaServiceTest {
+
+{% highlight java %}
+public class CorridaServiceTest {
 	@Before
 	public void setUp() throws Exception {
 	}
@@ -51,11 +51,12 @@ E claro um teste deste cara.
 	@After
 	public void tearDown() throws Exception {
 	}
-}</pre>
-<p style="text-align: left;">&nbsp;</p>
-<p style="text-align: left;">Antes de criar um teste vamos adicionar um método para "limpar" nosso banco antes de rodar o teste, ele vai deletar os arquivos do banco criados pelo Neo4j para não termos duplicidade no teste. Adicionamos uma propriedade String com o caminho/nome do banco e no setUp() do teste o método de exclusão:</p>
+}
+{% endhighlight %}
 
-<pre class="brush:java">private static final String CORRIDAS_DB = "sample/corrida-db";
+Antes de criar um teste vamos adicionar um método para "limpar" nosso banco antes de rodar o teste, ele vai deletar os arquivos do banco criados pelo Neo4j para não termos duplicidade no teste. Adicionamos uma propriedade String com o caminho/nome do banco e no setUp() do teste o método de exclusão:
+
+{% highlight java %}private static final String CORRIDAS_DB = "sample/corrida-db";
 
 @Before
 public void setUp() throws Exception {
@@ -75,15 +76,15 @@ private void deletaArquivoOuDiretorio(File arquivo) {
 	} else {
 		arquivo.delete();
 	}
-}</pre>
-<p style="text-align: left;">&nbsp;</p>
-<p style="text-align: left;">O CorridaService vai precisar acessar os dados de alguma forma, claro, então vamos dar isso a ele no contrutor, e também um index pra facilitar a vida em certas buscas. Então vamos inserir isso no nosso setUp() e dar um shutdown() no tearDown(). O new EmbeddedGraphDatabase(...) cria os arquivos do grafo.</p>
+}{% endhighlight %}
 
-<pre class="brush:java">public class CorridaServiceTest {
+O CorridaService vai precisar acessar os dados de alguma forma, claro, então vamos dar isso a ele no contrutor, e também um index pra facilitar a vida em certas buscas. Então vamos inserir isso no nosso setUp() e dar um shutdown() no tearDown(). O new EmbeddedGraphDatabase(...) cria os arquivos do grafo.
+
+{% highlight java %}public class CorridaServiceTest {
 	private static final String CORRIDAS_DB = "sample/corrida-db";
 	private CorridaService service;
 	private GraphDatabaseService graphDatabaseService;
-	private Index&lt;Node&gt; index;
+	private Index<Node> index;
 
 	@Before
 	public void setUp() throws Exception {
@@ -99,22 +100,23 @@ private void deletaArquivoOuDiretorio(File arquivo) {
 		this.graphDatabaseService.shutdown();
 	}
 	// blablabla outros métodos
-}</pre>
-<p style="text-align: left;">&nbsp;</p>
-<p style="text-align: left;">Agora o @Test! Precisamos criar a corrida e depois dizer quem correu, onde e a colocação.</p>
+}{% endhighlight %}
 
-<pre class="brush:java">@Test
+Agora o @Test! Precisamos criar a corrida e depois dizer quem correu, onde e a colocação.
+
+{% highlight java %}@Test
 public void deveCriarCorridaEInserirOPrimeiroColocado() {
 	Corrida corrida = this.service.criaCorrida("São Silvestre", "42 km");
 
-	Colocacao primeiro = this.service.criaColocacaoParaCorredor("São Silvestre", "Paul Tergat", "Primeiro");
+	Colocacao primeiro = this.service.criaColocacaoParaCorredor("São Silvestre", 
+		"Paul Tergat", "Primeiro");
 
-        // blablabla depois coloco os assert`s aqui
-}</pre>
-<p style="text-align: left;">&nbsp;</p>
-<p style="text-align: left;">Adiantando vamos criar as entidade que vamos precisar, Corrida, Colocação e Corredor. Corrida e Corredor terão a propriedade que equivale ao vértice(Node) do grafo.Porém a Colocação é a relação entre Corrida e Corredor, portanto tem em vez de um  vértice, uma aresta(Relationship).</p>
+        // blablabla depois coloco os assert's aqui
+}{% endhighlight %}
 
-<pre class="brush:java">public class Corrida {
+Adiantando vamos criar as entidade que vamos precisar, Corrida, Colocação e Corredor. Corrida e Corredor terão a propriedade que equivale ao vértice(Node) do grafo.Porém a Colocação é a relação entre Corrida e Corredor, portanto tem em vez de um  vértice, uma aresta(Relationship).
+
+{% highlight java %}public class Corrida {
 	private Node node;
 	private static final String NOME = "nome";
 	private static final String DISTANCIA = "distancia";
@@ -142,8 +144,9 @@ public void deveCriarCorridaEInserirOPrimeiroColocado() {
 	public String getDistancia() {
 		return (String) this.node.getProperty(DISTANCIA);
 	}
-}</pre>
-<pre class="brush:java">public class Corredor {
+}{% endhighlight %}
+<br>
+{% highlight java %}public class Corredor {
 	private Node node;
 	private static final String NOME = "nome";
 
@@ -158,8 +161,9 @@ public void deveCriarCorridaEInserirOPrimeiroColocado() {
 	public void setNome(String nome) {
 		this.node.setProperty(NOME, nome);
 	}
-}</pre>
-<pre class="brush:java">public class Colocacao {
+}{% endhighlight %}
+<br>
+{% highlight java %}public class Colocacao {
 	private static final String CHEGADA = "chegada";
 	private Relationship relacao;
 
@@ -178,21 +182,22 @@ public void deveCriarCorridaEInserirOPrimeiroColocado() {
 	public void setChegada(String chegada) {
 		relacao.setProperty(CHEGADA, chegada);
 	}
-}</pre>
-<p style="text-align: left;">&nbsp;</p>
-<p style="text-align: left;">Também criamos um Enum que terá os tipos de relação entre os nós. Ele precisa implementar a interface RelationshipType do Neo4j.</p>
+}{% endhighlight %}
 
-<pre class="brush:java">public enum TipoDeRelacionamento implements RelationshipType {
+Também criamos um Enum que terá os tipos de relação entre os nós. Ele precisa implementar a interface RelationshipType do Neo4j.
+
+{% highlight java %}public enum TipoDeRelacionamento implements RelationshipType {
 	PAI, CORREU
-}</pre>
+}{% endhighlight %}
+
 Lá no nosso teste fizemos o construtor do CorridaService receber alguns parâmetros e chamamos alguns métodos dele.Se você esta usando o Eclipse ele deve estar berrando pra você que os métodos não existem nem o construtor. Ai estão eles então.
-<pre class="brush:java">public class CorridaService {
+{% highlight java %}public class CorridaService {
 
 	private static final String CORRIDA = "corrida";
 	private GraphDatabaseService graphDb;
-	private Index&lt;Node&gt; index;
+	private Index<Node> index;
 
-	public CorridaService(GraphDatabaseService graphDatabaseService, Index&lt;Node&gt; index) {
+	public CorridaService(GraphDatabaseService graphDatabaseService, Index<Node> index) {
 		this.graphDb = graphDatabaseService;
 		this.index = index;
 	}
@@ -201,14 +206,16 @@ Lá no nosso teste fizemos o construtor do CorridaService receber alguns parâme
                 return null;
 	}
 
-	public Colocacao criaColocacaoParaCorredor(String nomeDaCorrida, String nomeDoCorredor, String colocacaoDeChegada) {
+	public Colocacao criaColocacaoParaCorredor(String nomeDaCorrida, 
+		String nomeDoCorredor, String colocacaoDeChegada) {
                 return null;
 	}
-}</pre>
+}{% endhighlight %}
+
 Ok, depois dessa enrolação toda vamos ao que realmente interessa, os nós no grafo.
 
 No método criaCorrida(...) criamos uma transação  e pegamos o nó de referência do grafo, criamos um nó que representará a corrida e inserimos nele os atributos. Depois é criada a relação entre o nó de referência e no da corrida, a novaCorrida tem uma relação com o nó de referência no qual o nó de referência é o "PAI" da novaCorrida . Adicionamos também a corrida num índice para ficar mais fácil de buscar posteriormente.
-<pre class="brush:java">public Corrida criaCorrida(String nome, String distancia) {
+{% highlight java %}public Corrida criaCorrida(String nome, String distancia) {
 	Transaction tx = this.graphDb.beginTx();
 	try {
 		Node nodeReferencia = this.graphDb.getReferenceNode();
@@ -229,9 +236,10 @@ No método criaCorrida(...) criamos uma transação  e pegamos o nó de referê
 	} finally {
 		tx.finish();
 	}
-}</pre>
+}{% endhighlight %}
 Agora falta o método criaColocacaoParaCorredor(...). Nele praticamente a mesma coisa, só que não usamos mais o nó de referência do grafo, e sim a corrida. E para buscar a corrida o nosso amigo índice esta aqui pra ajudar. Como esse relacionamento tem a posição de chegada como atributo criamos uma instância de Colocacao e inserimos a Relationship nela.
-<pre class="brush:java">	public Colocacao criaColocacaoParaCorredor(String nomeDaCorrida, String nomeDoCorredor, String colocacaoDeChegada) {
+{% highlight java %}public Colocacao criaColocacaoParaCorredor(String nomeDaCorrida, String nomeDoCorredor, 
+	String colocacaoDeChegada) {
 		Transaction tx = this.graphDb.beginTx();
 		try {
 			Node nodeCorrida = this.index.get(CORRIDA, nomeDaCorrida)
@@ -250,7 +258,8 @@ Agora falta o método criaColocacaoParaCorredor(...). Nele praticamente a mesma
 				throw new IllegalArgumentException("Null corredor");
 			}
 
-			Relationship relacaoColocacao = nodeCorredor.createRelationshipTo(nodeCorrida, TipoDeRelacionamento.CORREU);
+			Relationship relacaoColocacao = nodeCorredor.createRelationshipTo(
+				nodeCorrida, TipoDeRelacionamento.CORREU);
 
 			Colocacao colocacao = new Colocacao();
 			colocacao.setRelationship(relacaoColocacao);
@@ -263,13 +272,14 @@ Agora falta o método criaColocacaoParaCorredor(...). Nele praticamente a mesma
 		} finally {
 			tx.finish();
 		}
-	}</pre>
+	}{% endhighlight %}
 Faltou só o assert no nosso teste. O teste ficou assim:
-<pre class="brush:java">@Test
+{% highlight java %}@Test
 public void deveCriarCorridaEInserirOPrimeiroColocado() {
 	Corrida corrida = this.service.criaCorrida("São Silvestre", "42 km");
 
-	Colocacao primeiro = this.service.criaColocacaoParaCorredor("São Silvestre", "Paul Tergat", "Primeiro");
+	Colocacao primeiro = this.service.criaColocacaoParaCorredor("São Silvestre", 
+		"Paul Tergat", "Primeiro");
 
 	Assert.assertNotNull(corrida.getNode());
 	Assert.assertEquals("São Silvestre", corrida.getNode().getProperty("nome"));
@@ -280,10 +290,10 @@ public void deveCriarCorridaEInserirOPrimeiroColocado() {
 
 	Assert.assertEquals("Primeiro", primeiro.getRelationship().getProperty("chegada"));
 	Assert.assertEquals("Primeiro", primeiro.getChegada());
-}</pre>
-Se fizemos tudo certo os assert`s vão passar tranquilamente.
+}{% endhighlight %}
+Se fizemos tudo certo os assert's vão passar tranquilamente.
 
-Sei que vários assert`s e chamadas no mesmo teste não é muito bonito, mas esse post era pra exemplificar sobre o Neo4j.
+Sei que vários assert's e chamadas no mesmo teste não é muito bonito, mas esse post era pra exemplificar sobre o Neo4j.
 
 Não sei se expliquei bem, mas está ai e no <a href="https://github.com/marcelotozzi/corrida-neo4j" target="_blank">Github</a> também.Depois faço um exemplo mais bonito, com VRaptor, Struts 2 ou afins.
 
