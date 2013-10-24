@@ -20,6 +20,7 @@ tags:
   slug: vraptor
 - title: XML
   slug: xml
+categories: java json junit mock mockito tdd vraptor xml
 ---
 
 ![padrao]({{ site.url }}/assets/jason_up.jpg)

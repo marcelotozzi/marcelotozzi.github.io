@@ -10,6 +10,7 @@ tags:
   slug: mimimi
 - title: Padrões de Criacão
   slug: padroes-de-criacao
+categories: java design patterns Padrões de Criacão
 ---
 
 Voltando com os posts, vou começar uma série falando sobre os padrões de projeto do livro <a href="http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/ref=sr_1_1?s=books&ie=UTF8&qid=1305031310&sr=1-1" target="_blank">Design Patterns</a> do GoF(Gang of Four).

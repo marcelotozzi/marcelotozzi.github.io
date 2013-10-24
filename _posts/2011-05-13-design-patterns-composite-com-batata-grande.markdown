@@ -8,13 +8,7 @@ tags:
   slug: java
 - title: Padrões Estruturais
   slug: padroes-estruturais
-status: publish
-type: post
-published: true
-meta:
-  _edit_last: '1'
-  _thumbnail_id: '219'
-  dsq_thread_id: '303094814'
+categories: java design patterns Padrões Estruturais
 ---
 Depois do **<a title="Design Patterns – Abstract Factory, temos que pegar, Pokémon" href="/blog/design-patterns-abstract-factory-temos-que-pegar-pokemon/" target="_blank">Abstract Factory</a>** vamos para outro pattern simples. O **Composite**.
 

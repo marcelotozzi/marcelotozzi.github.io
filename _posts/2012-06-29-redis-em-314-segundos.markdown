@@ -10,6 +10,7 @@ tags:
   slug: nosql
 - title: Redis
   slug: redis
+categories: c++ key-value nosql redis
 ---
 Um fast post pra desenferrujar.
 

@@ -12,6 +12,7 @@ tags:
   slug: pessoal
 - title: VRaptor
   slug: vraptor
+categories: vraptor annotation interceptor java pessoal
 ---
 Atualmente estou re-escrevendo meu TCC, pois na época que fizemos o grupo que desenvolveu não estava aberto a idéia de usar TDD e afins, isso me deixou incomodado.
 
