@@ -20,34 +20,17 @@ Como eu sou um químico "muito do espertão" e os meus concorrentes não tem a m
 Vou ter carregamentos diários pra enviar, então vou fazer uma parceria com alguém para distribuir minha `blue meth`, e meu parceiro é o dono da empresa de fast-food `Los Pollos Hermanos`, pois ele já esta no negócio e tem uma distribuição discreta.
 
 Eu não vou mostrar meu processo de produção, só do empacotamento pra frente, pois minha fórmula é secreta.
-
+	
 Vamos então pro empacotamento:
 
 {% highlight bash %}#! /bin/bash
 
-#### ESTOQUEDEBLUEMETH='/estoque'
-ESTOQUEDEBLUEMETH='/Users/marcelotozzi/projetos/blog/marcelotozzi.github.com/downloads'
+ESTOQUEDEBLUEMETH='/estoque'
 DIA=$(date +%d%m%Y)
 LOTE='carregamento-'$DIA
 CARREGAMENTODODIA=$LOTE.meth
-MADRIGAL='madrigal'
 EXT=.tar.gz
 
-if [ -z $(which s3cmd) ]; then
-        echo "Instale e configure o s3cmd. - http://s3tools.org/s3cmd"
-        exit 0
-fi
-
-fnError(){
-        echo "======= Ocorreu um erro! ======="
-        # fnRmTempFiles $1
-        echo "======= Carga não foi distribuida! ======="
-        exit 1
-}
-
-trap 'fnError $ESTOQUEDEBLUEMETH' ERR
-
-############## empacotando
 echo "-- Empacotando blue meth ..."
 
 CARREGAMENTO=$ESTOQUEDEBLUEMETH/$CARREGAMENTODODIA
@@ -57,20 +40,11 @@ if [[ ! -f "$CARREGAMENTO" ]]; then
 fi
 
 tar -P -zcpf $ESTOQUEDEBLUEMETH/$LOTE$EXT -C $ESTOQUEDEBLUEMETH $CARREGAMENTO > /dev/null
-
-PACOTEDODIA=$LOTE$EXT
-PACOTE=$ESTOQUEDEBLUEMETH/$PACOTEDODIA
-
-echo "-- Enviando carga para o S3. Destino: s3://$MADRIGAL"
-
-if [[ ! -f "$PACOTE" ]]; then
-	exit 1
-fi
-
-s3cmd put "$PACOTE" s3://$MADRIGAL/  > /dev/null
-
-echo "-- Enviado!"
 {% endhighlight %}
+
+Ok, assim empacotamos, mas e agora para o envio?
+
+Para enviar os nossos amigos dO Pollos Hermanos precisam do <a href="http://s3tools.org/s3cmd" target="_blank">s3cmd</a> instalado.
 
 Você pode [baixar o processo]({{ site.url }}/downloads/processo.sh).
 
