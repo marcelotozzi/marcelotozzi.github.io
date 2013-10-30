@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Heisenberg distribuindo metanfetamina pelo Amazon S3"
-date:   2013-10-30 11:00:00
+date:   2013-11-04 11:00:00
 categories: Amazon,Breaking Bad,Heisenberg,Shell,Bash,S3,Los Pollos Hermanos
 ---
 ***OBS: spoilers de Breaking Bad, se você não assistiu, não leia!***
@@ -24,9 +24,28 @@ Eu não vou mostrar meu processo de produção, só do empacotamento pra frente,
 Vamos então pro empacotamento:
 
 {% highlight bash %}#! /bin/bash
-ESTOQUEDEBLUEMETH='/estoque'
-DIA=$(date +%Y%m%d%H)
-CARREGAMENTODODIA='carregamento-'$DIA.meth
+
+#### ESTOQUEDEBLUEMETH='/estoque'
+ESTOQUEDEBLUEMETH='/Users/marcelotozzi/projetos/blog/marcelotozzi.github.com/downloads'
+DIA=$(date +%d%m%Y)
+LOTE='carregamento-'$DIA
+CARREGAMENTODODIA=$LOTE.meth
+MADRIGAL='madrigal'
+EXT=.tar.gz
+
+if [ -z $(which s3cmd) ]; then
+        echo "Instale e configure o s3cmd. - http://s3tools.org/s3cmd"
+        exit 0
+fi
+
+fnError(){
+        echo "======= Ocorreu um erro! ======="
+        # fnRmTempFiles $1
+        echo "======= Carga não foi distribuida! ======="
+        exit 1
+}
+
+trap 'fnError $ESTOQUEDEBLUEMETH' ERR
 
 ############## empacotando
 echo "-- Empacotando blue meth ..."
@@ -34,15 +53,26 @@ echo "-- Empacotando blue meth ..."
 CARREGAMENTO=$ESTOQUEDEBLUEMETH/$CARREGAMENTODODIA
 
 if [[ ! -f "$CARREGAMENTO" ]]; then
-	continue
+	exit 1
 fi
-filename=$(basename "$CARREGAMENTO")
-filename="${filename%.*}"
 
-tar -P -zcpf $ESTOQUEDEBLUEMETH/"$filename".tar.gz -C $/$ESTOQUEDEBLUEMETH "$filename" > /dev/null
+tar -P -zcpf $ESTOQUEDEBLUEMETH/$LOTE$EXT -C $ESTOQUEDEBLUEMETH $CARREGAMENTO > /dev/null
 
-echo -ne '\n'
+PACOTEDODIA=$LOTE$EXT
+PACOTE=$ESTOQUEDEBLUEMETH/$PACOTEDODIA
+
+echo "-- Enviando carga para o S3. Destino: s3://$MADRIGAL"
+
+if [[ ! -f "$PACOTE" ]]; then
+	exit 1
+fi
+
+s3cmd put "$PACOTE" s3://$MADRIGAL/  > /dev/null
+
+echo "-- Enviado!"
 {% endhighlight %}
+
+Você pode [baixar o processo]({{ site.url }}/downloads/processo.sh).
 
 ![padrao]({{ site.url }}/assets/saymyname.gif)
 
