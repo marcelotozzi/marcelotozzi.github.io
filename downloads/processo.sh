@@ -1,7 +1,6 @@
 #! /bin/bash
 
-#### ESTOQUEDEBLUEMETH='/estoque'
-ESTOQUEDEBLUEMETH='/Users/marcelotozzi/projetos/blog/marcelotozzi.github.com/downloads'
+ESTOQUEDEBLUEMETH='/estoque'
 DIA=$(date +%d%m%Y)
 LOTE='carregamento-'$DIA
 CARREGAMENTODODIA=$LOTE.meth
@@ -15,7 +14,6 @@ fi
 
 fnError(){
         echo "======= Ocorreu um erro! ======="
-        # fnRmTempFiles $1
         echo "======= Carga não foi distribuida! ======="
         exit 1
 }
