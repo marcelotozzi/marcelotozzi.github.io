@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Heisenberg distribuindo metanfetamina pelo Amazon S3"
-date:   2013-11-04 11:00:00
+date:   2013-11-03 11:00:00
 categories: Amazon,Breaking Bad,Heisenberg,Shell,Bash,S3,Los Pollos Hermanos,Log
 ---
 ***OBS: spoilers de Breaking Bad, se você não assistiu, não leia!***
