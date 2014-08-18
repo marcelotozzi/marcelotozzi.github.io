@@ -1,6 +1,6 @@
 name: Marcelo Tozzi
 markdown: redcarpet
-pygments: true
+rouge: true
 timezone: America/Sao_Paulo
 show_drafts: false
 relative_permalinks: true
