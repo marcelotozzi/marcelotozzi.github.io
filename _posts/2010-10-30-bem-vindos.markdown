@@ -1,11 +1,6 @@
 ---
 layout: post
 title: "Bem vindos!"
-tags:
-- title: Pessoal
-  slug: pessoal
-date:   2010-10-30 01:32:30
-categories: Pessoal
 ---
 Nesse blog pretendo postar minhas opiniões, coisas interessantes que descobrir e tudo mais.
 

@@ -1,14 +1,13 @@
 ---
 layout: post
 title:  "Encoding UTF-8 no Tomcat com Spring"
-date:   2014-08-18 13:00:00
 ---
 
 Você esta lá, criando sua aplicação com Spring, Hibernate e afins. Seguindo aquele padrão que quase todo mundo usa <s>#sad</s> ou usou. 
 
 Você já definiu seu `web.xml` do Spring com `UTF-8`.
 
-{% highlight xml %}
+{% highlight xml linenos %}
 <web-app xmlns="http://java.sun.com/xml/ns/javaee" 
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
@@ -49,7 +48,7 @@ Fazendo deploy, mesmo você setando no seu `web.xml`, será usado o encoding do 
 
 Pra resolver isso crie o arquivo `setenv.sh` na pasta `bin` do seu tomcat:
 
-{% highlight bash %}
+{% highlight bash linenos %}
 export JAVA_OPTS="${JAVA_OPTS} -Dfile.encoding=UTF8"
 {% endhighlight %}
 

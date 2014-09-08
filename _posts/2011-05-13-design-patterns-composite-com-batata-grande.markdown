@@ -1,14 +1,6 @@
 ---
 layout: post
 title: Design Patterns - Composite, com batata grande...
-tags:
-- title: Design Patterns
-  slug: design-patterns
-- title: Java
-  slug: java
-- title: Padrões Estruturais
-  slug: padroes-estruturais
-categories: Java,Design Patterns,Padrões Estruturais
 ---
 Depois do **<a title="Design Patterns – Abstract Factory, temos que pegar, Pokémon" href="/blog/design-patterns-abstract-factory-temos-que-pegar-pokemon/" target="_blank">Abstract Factory</a>** vamos para outro pattern simples. O **Composite**.
 

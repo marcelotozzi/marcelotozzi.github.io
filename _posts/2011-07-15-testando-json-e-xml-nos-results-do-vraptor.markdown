@@ -1,26 +1,6 @@
 ---
 layout: post
 title: Testando JSON e XML nos Results do VRaptor
-tags:
-- title: Bacon
-  slug: bacon
-- title: Java
-  slug: java
-- title: JSON
-  slug: json
-- title: JUnit
-  slug: junit
-- title: Mock
-  slug: mock
-- title: Mockito
-  slug: mockito
-- title: TDD
-  slug: tdd
-- title: VRaptor
-  slug: vraptor
-- title: XML
-  slug: xml
-categories: Java,Json,Junit,Mock,Mockito,TDD,Vraptor,XML
 ---
 
 ![json]({{ site.url }}/assets/designalldll-300x300.jpg)

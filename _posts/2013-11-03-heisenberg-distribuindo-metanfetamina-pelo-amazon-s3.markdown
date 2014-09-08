@@ -1,8 +1,6 @@
 ---
 layout: post
 title:  "Heisenberg distribuindo metanfetamina pelo Amazon S3"
-date:   2013-11-03 11:00:00
-categories: Amazon,Breaking Bad,Heisenberg,Shell,Bash,S3,Los Pollos Hermanos,Log
 ---
 ***OBS: spoilers de Breaking Bad, se você não assistiu, não leia!***
 
@@ -23,7 +21,7 @@ Eu não vou mostrar meu processo de produção, só do empacotamento pra frente,
 	
 Vamos então pro empacotamento:
 
-{% highlight bash %}#! /bin/bash
+{% highlight bash linenos %}#! /bin/bash
 ESTOQUEDEBLUEMETH='/estoque'
 DIA=$(date +%d%m%Y)
 LOTE='carregamento-'$DIA
@@ -47,7 +45,7 @@ Para enviar os nossos amigos dO Pollos Hermanos precisam do <a href="http://s3to
 
 Vamos baixar a última versão da lib <a href="https://github.com/s3tools/s3cmd/releases" target="_blank">aqui</a>. No meu caso é a **v1.5.0-alpha3** <s>Ah, mas vc ta usando a alpha mimimi</s>. Para instalar apenas faça o seguinte:
 
-{% highlight bash %}#! /bin/bash
+{% highlight bash linenos %}#! /bin/bash
 unzip s3cmd-1.5.0-alpha3.zip
 cd s3cmd-1.5.0-alpha3/
 python setup.py install
@@ -55,7 +53,7 @@ python setup.py install
 
 Pronto, instalado, agora precisamos configurar:
 
-{% highlight bash %}#! /bin/bash
+{% highlight bash linenos %}#! /bin/bash
 3cmd --configure
 
 Enter new values or accept defaults in brackets with Enter.
@@ -99,7 +97,7 @@ Configuration saved to '/Users/heisenberg/.s3cfg'
 
 Agora, completando o envio do lote usando o s3cmd, tomara que não seja interceptado pelo meu cunhado do DEA:
 
-{% highlight bash%}#! /bin/bash
+{% highlight bash linenos %}#! /bin/bash
 
 ESTOQUEDEBLUEMETH='/estoque'
 DIA=$(date +%d%m%Y)

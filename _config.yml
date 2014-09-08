@@ -1,8 +1,24 @@
-name: Marcelo Tozzi
-markdown: redcarpet
-rouge: true
-timezone: America/Sao_Paulo
-show_drafts: false
-relative_permalinks: true
-permalink: /blog/:title
-paginate_path: 'page:num'
+# Dependencies
+markdown:         redcarpet
+rouge:         true
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Marcelo Tozzi
+tagline:          'Blog'
+description:      'Blog pessoal'
+url:              http://www.marcelotozzi.com
+baseurl:          '/'
+paginate:         5
+
+author:
+  name:           'Marcelo Tozzi'
+  url:            https://twitter.com/marcelotozzi
+
+# Custom vars
+version:          1.0.0
+
+github:
+  repo:           https://github.com/marcelotozzi/marcelotozzi.github.io

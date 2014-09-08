@@ -1,18 +1,6 @@
 ---
 layout: post
 title: VRaptor - Entre interceptors e annotations!
-tags:
-- title: Annotation
-  slug: annotation
-- title: Interceptor
-  slug: interceptor
-- title: Java
-  slug: java
-- title: Pessoal
-  slug: pessoal
-- title: VRaptor
-  slug: vraptor
-categories: Vraptor,Annotation,Interceptor,Java,Pessoal
 ---
 Atualmente estou re-escrevendo meu TCC, pois na época que fizemos o grupo que desenvolveu não estava aberto a idéia de usar TDD e afins, isso me deixou incomodado.
 

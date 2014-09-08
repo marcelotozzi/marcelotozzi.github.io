@@ -1,16 +1,6 @@
 ---
 layout: post
 title: Redis em 314 segundos
-tags:
-- title: C++
-  slug: c-plus-plus
-- title: Key-Value
-  slug: key-value
-- title: NoSQL
-  slug: nosql
-- title: Redis
-  slug: redis
-categories: C++,Key-Value,NoSQL,Redis
 ---
 Um fast post pra desenferrujar.
 
