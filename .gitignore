@@ -1,3 +1,4 @@
 _site/
 _attachments/
 *.DS_Store
+Jekyll.sublime-settings
