@@ -23,3 +23,9 @@ version:          1.0.0
 
 github:
   repo:           https://github.com/marcelotozzi/marcelotozzi.github.io
+
+
+comments:
+  provider: disqus
+  disqus:
+    short_name: marcelo-tozzi
