@@ -12,7 +12,7 @@ Atualmente estou re-escrevendo meu TCC, pois na época que fizemos o grupo que d
 
 Usamos o <a href="http://vraptor.caelum.com.br/" target="_blank">VRaptor</a> para o pattern MVC. Estava eu refazendo e corrigindo os controllers e fui então recriar os interceptors de acesso para recursos que só seriam acessíveis com usuário logado (caso não entenda bulhufas dos interceptors no VRaptor, <a href="http://vraptor.caelum.com.br/documentacao/interceptadores/" target="_blank">leia isso</a>) então me deparei com isso:
 
-{% highlight java %}@Intercepts
+{% highlight java linenos %}@Intercepts
 public class XPTOInterceptor implements Interceptor {
 	@Override
 	public boolean accepts(ResourceMethod method) {
@@ -31,7 +31,7 @@ public class XPTOInterceptor implements Interceptor {
 
 Se fosse chamado XPTOController ou FooController a chamada seria interceptada. Porém eu queria liberar alguns métodos do meu Controller, por exemplo o show de XPTOController pra mostrar um cadastro ou o authenticates do AccountController. Teria que verificar qual método estava sendo chamado pelo nome, então ficaria assim o accepts:
 
-{% highlight java %}@Override
+{% highlight java linenos %}@Override
 public boolean accepts(ResourceMethod method) {
 	return (method.getResource().getType().isAssignableFrom(XPTOController.class)
 			    && !method.getMethod().getName().equals("show")) ||
@@ -51,21 +51,21 @@ Beleza, ai todos os métodos do controller anotado são interceptados, mas e os 
 
 A annotation @InterceptResource.
 
-{% highlight java %}@Target(ElementType.TYPE)
+{% highlight java linenos %}@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface InterceptResource {
 }{% endhighlight %}
 
 A annotation @NoInterceptMethod.
 
-{% highlight java %}@Target(ElementType.METHOD)
+{% highlight java linenos %}@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface NoInterceptMethod {
 }{% endhighlight %}
 
 Então anoto meu controller e método.
 
-{% highlight java %}@Resource
+{% highlight java linenos %}@Resource
 @InterceptResource
 public class XPTOController {
 
@@ -78,7 +78,7 @@ public class XPTOController {
 
 E finalmente depois de toda essa ladainha, como ficou meu método accepts apenas verificando se controller e método estão anotados. Sempre intercepto minha chamada se o recurso estiver anotado com @InterceptResource e se o método não estiver anotado com @NoInterceptMethod.
 
-{% highlight java %}public boolean accepts(ResourceMethod method) {
+{% highlight java linenos %}public boolean accepts(ResourceMethod method) {
 	return method.getResource().getType().isAnnotationPresent(InterceptResource.class) &&
 		!method.getMethod().isAnnotationPresent(NoInterceptMethod.class);
 }{% endhighlight %}

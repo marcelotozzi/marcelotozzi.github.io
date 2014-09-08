@@ -32,12 +32,12 @@ Bora fazer um exemplo então. E continuando com os exemplos doidões, quem não 
 Então vamos fazer um belo Whooper com queijo usando o padão Composite para compor nosso rango.
 
 Primeiro vamos criar a interface citada acima que vai ser utilizada como "contrato" tanto para o componente individual quando para o componente composto. Vou definir um método que deve retornar as calorias do alimento e outro pra mostrar o nome dele.
-{% highlight java %}public interface Alimento {
+{% highlight java linenos %}public interface Alimento {
 	public int retornaCalorias();
 	public void mostrar();
 }{% endhighlight %}
 Precisamos também dos componentes individuais.Vamos criar todos, cada um deles sobreescreve os métodos da interface.
-{% highlight java %}public class Alface implements Alimento {
+{% highlight java linenos %}public class Alface implements Alimento {
 	@Override
 	public void mostrar() {
 		System.out.println("Alface");
@@ -121,7 +121,7 @@ public class Tomate implements Alimento {
 	}
 }{% endhighlight %}
 Agora vamos começar com o nosso teste e ir incrementando conforme necessário. Vou criar alguns componentes/ingredientes únicos no teste.
-{% highlight java %}public class BurgerKingTest {
+{% highlight java linenos %}public class BurgerKingTest {
 	@Test
 	public void deveriaMontarUmWhopperComQueijoImprimirNoConsoleERetornar800Kcal() {
 		Alimento hamburguer = new Hamburguer();
@@ -138,7 +138,7 @@ Agora vamos começar com o nosso teste e ir incrementando conforme necessário. 
 	}
 }{% endhighlight %}
 O codigo acima tem uma coisa de que ainda não falamos, a classe Rango, sem ela não vamos conseguir fazer esse teste mega bizarro passar.Então...
-{% highlight java %}import java.util.ArrayList;
+{% highlight java linenos %}import java.util.ArrayList;
 import java.util.List;
 
 import br.com.marcelotozzi.designpatterns.composite.ingredientes.Alimento;
@@ -171,7 +171,7 @@ Essa classe implementa a interface Alimento e sobre escreve seus métodos, poré
 
 Agora só precisamos terminar nosso teste.
 
-{% highlight java %}public class BurgerKingTest {
+{% highlight java linenos %}public class BurgerKingTest {
 	@Test
 	public void deveriaMontarUmWhopperComQueijoImprimirNoConsoleERetornar800Kcal() {
 		Alimento hamburguer = new Hamburguer();

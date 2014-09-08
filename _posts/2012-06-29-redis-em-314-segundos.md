@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Redis em 314 segundos
-categories: [Java,NoSQL]
+categories: [NoSQL,Java]
 tags:
 - c++
 - key-value
@@ -19,7 +19,7 @@ Ele tem várias features como Pipelining, Publish/Subscribe, Transactions, Inser
 
 Vamos então baixar, instalar e "startar" instâncias marotas do Redis só pra tirar um barato.
 
-{% highlight sh %}wget http://redis.googlecode.com/files/redis-2.4.15.tar.gz
+{% highlight sh linenos %}wget http://redis.googlecode.com/files/redis-2.4.15.tar.gz
 $ tar xzf redis-2.4.15.tar.gz
 $ cd redis-2.4.15
 $ make
@@ -27,17 +27,17 @@ $ make
 
 Não se esqueça de rodar os testes do Redis pra ter certeza que esta tudo ok:
 
-{% highlight sh %}$ make test{% endhighlight %}
+{% highlight sh linenos %}$ make test{% endhighlight %}
 
 O Redis até rodaria agora na sua máquina rodando o
 
-{% highlight sh %}./src/redis-server{% endhighlight %}
+{% highlight sh linenos %}./src/redis-server{% endhighlight %}
 
 na pasta compilada, porém qual é a graça disso?
 
 Vamos usar o /utils/install_server.sh que vem junto com o Redis para startar o processo na máquina, podendo ter várias instâncias independentes (ou não). Esse .sh configura para você as pastas com caminhos default, porém você pode especificar onde
 elas ficarão.
-{% highlight sh %}$ sudo ./install_server.sh 
+{% highlight sh linenos %}$ sudo ./install_server.sh 
 Welcome to the redis service installer
 This script will help you easily set up a running redis server
 
@@ -59,7 +59,7 @@ Existem vários <a href="http://redis.io/clients" target="_blank">clients</a> pa
 
 Mas pra dar uma olhada direto no Redis, quando fizemos o make install la em cima, agora vc tem o redis-cli instalado na sua máquina. Como mudei a porta tenho que cita-la quando conectar pois o padrão é 6379. É só mandar esse comando no terminal:
 
-{% highlight sh %}
+{% highlight sh linenos %}
 $ redis-cli -p 6380
 redis 127.0.0.1:6380> dbsize
 (integer) 0

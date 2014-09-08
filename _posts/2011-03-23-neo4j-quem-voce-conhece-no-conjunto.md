@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Neo4j - Quem você conhece no conjunto?
-categories: [Java,NoSQL]
+categories: [NoSQL,Java]
 tags:
 - java
 - nosql
@@ -31,14 +31,14 @@ Vamos então fazer algo em Java. Eu sei que você "marotamente" já fez o <a hr
 
 Agora vamos criar um Service que ira acessar nosso banco de dados em grafo.</p>
 
-{% highlight java %}
+{% highlight java linenos %}
 public class CorridaService {
 }
 {% endhighlight %}
 
 E claro um teste deste cara.
 
-{% highlight java %}
+{% highlight java linenos %}
 public class CorridaServiceTest {
 	@Before
 	public void setUp() throws Exception {
@@ -52,7 +52,7 @@ public class CorridaServiceTest {
 
 Antes de criar um teste vamos adicionar um método para "limpar" nosso banco antes de rodar o teste, ele vai deletar os arquivos do banco criados pelo Neo4j para não termos duplicidade no teste. Adicionamos uma propriedade String com o caminho/nome do banco e no setUp() do teste o método de exclusão:
 
-{% highlight java %}private static final String CORRIDAS_DB = "sample/corrida-db";
+{% highlight java linenos %}private static final String CORRIDAS_DB = "sample/corrida-db";
 
 @Before
 public void setUp() throws Exception {
@@ -76,7 +76,7 @@ private void deletaArquivoOuDiretorio(File arquivo) {
 
 O CorridaService vai precisar acessar os dados de alguma forma, claro, então vamos dar isso a ele no contrutor, e também um index pra facilitar a vida em certas buscas. Então vamos inserir isso no nosso setUp() e dar um shutdown() no tearDown(). O new EmbeddedGraphDatabase(...) cria os arquivos do grafo.
 
-{% highlight java %}public class CorridaServiceTest {
+{% highlight java linenos %}public class CorridaServiceTest {
 	private static final String CORRIDAS_DB = "sample/corrida-db";
 	private CorridaService service;
 	private GraphDatabaseService graphDatabaseService;
@@ -100,7 +100,7 @@ O CorridaService vai precisar acessar os dados de alguma forma, claro, então va
 
 Agora o @Test! Precisamos criar a corrida e depois dizer quem correu, onde e a colocação.
 
-{% highlight java %}@Test
+{% highlight java linenos %}@Test
 public void deveCriarCorridaEInserirOPrimeiroColocado() {
 	Corrida corrida = this.service.criaCorrida("São Silvestre", "42 km");
 
@@ -112,7 +112,7 @@ public void deveCriarCorridaEInserirOPrimeiroColocado() {
 
 Adiantando vamos criar as entidade que vamos precisar, Corrida, Colocação e Corredor. Corrida e Corredor terão a propriedade que equivale ao vértice(Node) do grafo.Porém a Colocação é a relação entre Corrida e Corredor, portanto tem em vez de um  vértice, uma aresta(Relationship).
 
-{% highlight java %}public class Corrida {
+{% highlight java linenos %}public class Corrida {
 	private Node node;
 	private static final String NOME = "nome";
 	private static final String DISTANCIA = "distancia";
@@ -142,7 +142,7 @@ Adiantando vamos criar as entidade que vamos precisar, Corrida, Colocação e Co
 	}
 }{% endhighlight %}
 <br>
-{% highlight java %}public class Corredor {
+{% highlight java linenos %}public class Corredor {
 	private Node node;
 	private static final String NOME = "nome";
 
@@ -159,7 +159,7 @@ Adiantando vamos criar as entidade que vamos precisar, Corrida, Colocação e Co
 	}
 }{% endhighlight %}
 <br>
-{% highlight java %}public class Colocacao {
+{% highlight java linenos %}public class Colocacao {
 	private static final String CHEGADA = "chegada";
 	private Relationship relacao;
 
@@ -182,12 +182,12 @@ Adiantando vamos criar as entidade que vamos precisar, Corrida, Colocação e Co
 
 Também criamos um Enum que terá os tipos de relação entre os nós. Ele precisa implementar a interface RelationshipType do Neo4j.
 
-{% highlight java %}public enum TipoDeRelacionamento implements RelationshipType {
+{% highlight java linenos %}public enum TipoDeRelacionamento implements RelationshipType {
 	PAI, CORREU
 }{% endhighlight %}
 
 Lá no nosso teste fizemos o construtor do CorridaService receber alguns parâmetros e chamamos alguns métodos dele.Se você esta usando o Eclipse ele deve estar berrando pra você que os métodos não existem nem o construtor. Ai estão eles então.
-{% highlight java %}public class CorridaService {
+{% highlight java linenos %}public class CorridaService {
 
 	private static final String CORRIDA = "corrida";
 	private GraphDatabaseService graphDb;
@@ -211,7 +211,7 @@ Lá no nosso teste fizemos o construtor do CorridaService receber alguns parâme
 Ok, depois dessa enrolação toda vamos ao que realmente interessa, os nós no grafo.
 
 No método criaCorrida(...) criamos uma transação  e pegamos o nó de referência do grafo, criamos um nó que representará a corrida e inserimos nele os atributos. Depois é criada a relação entre o nó de referência e no da corrida, a novaCorrida tem uma relação com o nó de referência no qual o nó de referência é o "PAI" da novaCorrida . Adicionamos também a corrida num índice para ficar mais fácil de buscar posteriormente.
-{% highlight java %}public Corrida criaCorrida(String nome, String distancia) {
+{% highlight java linenos %}public Corrida criaCorrida(String nome, String distancia) {
 	Transaction tx = this.graphDb.beginTx();
 	try {
 		Node nodeReferencia = this.graphDb.getReferenceNode();
@@ -234,7 +234,7 @@ No método criaCorrida(...) criamos uma transação  e pegamos o nó de referê
 	}
 }{% endhighlight %}
 Agora falta o método criaColocacaoParaCorredor(...). Nele praticamente a mesma coisa, só que não usamos mais o nó de referência do grafo, e sim a corrida. E para buscar a corrida o nosso amigo índice esta aqui pra ajudar. Como esse relacionamento tem a posição de chegada como atributo criamos uma instância de Colocacao e inserimos a Relationship nela.
-{% highlight java %}public Colocacao criaColocacaoParaCorredor(String nomeDaCorrida, String nomeDoCorredor, 
+{% highlight java linenos %}public Colocacao criaColocacaoParaCorredor(String nomeDaCorrida, String nomeDoCorredor, 
 	String colocacaoDeChegada) {
 		Transaction tx = this.graphDb.beginTx();
 		try {
@@ -270,7 +270,7 @@ Agora falta o método criaColocacaoParaCorredor(...). Nele praticamente a mesma
 		}
 	}{% endhighlight %}
 Faltou só o assert no nosso teste. O teste ficou assim:
-{% highlight java %}@Test
+{% highlight java linenos %}@Test
 public void deveCriarCorridaEInserirOPrimeiroColocado() {
 	Corrida corrida = this.service.criaCorrida("São Silvestre", "42 km");
 

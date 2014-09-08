@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Testando JSON e XML nos Results do VRaptor - Parte 2
-categories: [Java]
+categories: [Testes,Java]
 tags:
 - java
 - json
@@ -19,7 +19,7 @@ Continuando com o código do <a title="Testando JSON e XML nos Results do VRapto
 
 Agora é criar uma classe de testes separada para os testes de serialização. Desta vez usei o `MockSerializationResult` que é o mock que o VRaptor 3.4 disponibiliza e como eu disse no post anterior não existia no SNAPSHOT 3.3.
 
-{% highlight java %}public class SerializeEventoControllerTest {
+{% highlight java linenos %}public class SerializeEventoControllerTest {
 	private MockSerializationResult result;
 	private EventoController controller;
 	@Mock
@@ -34,7 +34,7 @@ Agora é criar uma classe de testes separada para os testes de serialização. D
 }{% endhighlight %}
 Agora é hora de criar os métodos de teste, eles são bem parecidos com os anteriores a diferença é como pegamos o objeto serializado, precisamos chamar o método `serializedResult` do `MockSerializationResult`.
 
-{% highlight java %}@Test
+{% highlight java linenos %}@Test
 public void deveRetornarUmEventoNoFormatoJSON() throws Exception {
 	Evento evento = Dado.umEvento(1L, "BACONSP", "Bacon Conference SP", "Av Paulista", 
 		Calendar.getInstance());
@@ -63,7 +63,7 @@ public void deveRetornarUmaListaDeEventoNoFormatoJSON() throws Exception {
 
 Também criei novos métodos na classe `Entao` para me ajudar nos `assert`'s. Para não ter que ficar criando o JSON na mão usei o <a href="http://xstream.codehaus.org/" target="_blank">XStream</a>, a mesma coisa que o VRaptor internamente usa.
 
-{% highlight java %}public static String deveRetornaJSONde(Evento evento) {
+{% highlight java linenos %}public static String deveRetornaJSONde(Evento evento) {
 	XStream xstream = getXStreamJSON();
 
 	xstream.alias("evento", Evento.class);
@@ -79,7 +79,7 @@ public static String deveRetornaListaJSONde(List<Evento> eventos) {
 
 Poréms se você usar o `XStream` diretamente com o <a href="http://jettison.codehaus.org/" target="_blank">Jettison</a>, seus testes não vão passar, pois o VRaptor utiliza uma indentação diferente do padrão do XStream para o JSON. Por isso o método `getStreamJSON()` na classe `Entao`. Esse código peguei da classe do VRaptor <a href="https://github.com/caelum/vraptor/blob/master/vraptor-core/src/main/java/br/com/caelum/vraptor/serialization/xstream/XStreamJSONSerialization.java" target="_blank">XStreamJSONSerialization</a>. Dá pra melhorar pra classe de teste mas vou deixar assim mesmo, eu só não sei por que eles colocaram esse espaço internamente no framework.
 
-{% highlight java %}private static final String DEFAULT_NEW_LINE = "";
+{% highlight java linenos %}private static final String DEFAULT_NEW_LINE = "";
 private static final char[] DEFAULT_LINE_INDENTER = {};
 private static final String INDENTED_NEW_LINE = "\n";
 private static final char[] INDENTED_LINE_INDENTER = { ' ', ' ' };
@@ -105,7 +105,7 @@ private static XStream getXStreamJSON() {
 
 Agora vamos criar os testes para o XML na classe `SerializeEventoControllerTest` que são praticamente a mesma coisa:
 
-{% highlight java %}@Test
+{% highlight java linenos %}@Test
 public void deveRetornarUmEventoNoFormatoXML() throws Exception {
 	Evento evento = Dado.umEvento(1L, "BACONSP", "Bacon Conference SP", "Av Paulista", 
 		Calendar.getInstance());
@@ -134,7 +134,7 @@ public void deveRetornarUmaListaDeEventoNoFormatoXML() throws Exception {
 
 E também os métodos de `assert` que pra XML são mais simples:
 
-{% highlight java %}public static String deveRetornaXMLde(Evento evento) {
+{% highlight java linenos %}public static String deveRetornaXMLde(Evento evento) {
 	XStream xstream = new XStream();
 
 	xstream.alias("evento", Evento.class);
@@ -143,7 +143,7 @@ E também os métodos de `assert` que pra XML são mais simples:
 
 Um detalhe é que para uma lista, temos que indicar ao XStream para serializar a lista e os objetos que ela contém:
 
-{% highlight java %}public static String deveRetornaListaXMLde(List<Evento> eventos) {
+{% highlight java linenos %}public static String deveRetornaListaXMLde(List<Evento> eventos) {
 	XStream xstream = new XStream();
 
 	xstream.alias("eventos", List.class);
@@ -153,7 +153,7 @@ Um detalhe é que para uma lista, temos que indicar ao XStream para serializar a
 
 Finalmente vamos criar os métodos no EventoController que transformar os eventos e listas de eventos em XML e/ou JSON. Para isso precisamos indicar para o Result qual o formato que ele deve disponibilizar para a view, inserir o objeto e "mandar" serializar. Essa seria a forma programática, para outras formas<a href="http://vraptor.caelum.com.br/documentacao/view-e-ajax/" target="_blank"> tente isso</a>.
 
-{% highlight java %}public void showXML(Long id) {
+{% highlight java linenos %}public void showXML(Long id) {
 	this.result.use(Results.xml()).from(this.eventoDAO.load(id), "evento").serialize();
 }
 

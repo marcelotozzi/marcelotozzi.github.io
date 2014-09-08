@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Testando JSON e XML nos Results do VRaptor
-categories: [Java]
+categories: [Testes,Java]
 tags:
 - java
 - json
@@ -23,7 +23,7 @@ Dito e feito, fui verificar no <a href="https://github.com/caelum/vraptor" targe
 
 Vamos precisar, é claro, do último <a href="https://oss.sonatype.org/content/repositories/snapshots/br/com/caelum/vraptor/" target="_blank">SNAPSHOT</a> e criar um contexto simples de eventos. Uma classe `Evento`:
 
-{% highlight java %}import java.util.Calendar;
+{% highlight java linenos %}import java.util.Calendar;
 
 public class Evento {
 	private Long id;
@@ -75,7 +75,7 @@ public class Evento {
 
 Ok, agora precisamos de um controller para adicionar nosso `Result` que vai retornar os objetos. Vou também adicionar um <a href="http://java.sun.com/blueprints/corej2eepatterns/Patterns/DataAccessObject.html" target="_blank">DAO</a> que terá somente os métodos pois vamos mocka-lo.
 
-{% highlight java %}public class EventoController {
+{% highlight java linenos %}public class EventoController {
 	private Result result;
 	private EventoDAO eventoDAO;
 
@@ -85,7 +85,7 @@ Ok, agora precisamos de um controller para adicionar nosso `Result` que vai reto
 	}
 }{% endhighlight %}
 
-{% highlight java %}import java.util.List;
+{% highlight java linenos %}import java.util.List;
 
 import br.com.marcelotozzi.vraptorresults.model.Evento;
 
@@ -104,7 +104,7 @@ Agora vamos criar uma classe de teste. Como não precisamos conectar com o banco
 
 Para o `Result` vou usar o `MockResult` como disse lá no começo do post, basta apenas instanciar o objeto e passá-lo para o controller.
 
-{% highlight java %}public class EventoControllerTest {
+{% highlight java linenos %}public class EventoControllerTest {
 	private EventoController controller;
 	private Result result;
 	@Mock
@@ -121,7 +121,7 @@ Para o `Result` vou usar o `MockResult` como disse lá no começo do post, basta
 
 Vamos criar os testes para o nosso controller. Como meu DAO esta mockado ele não vai retornar nada quando chamar um método dele. Então tenho q dizer ao Mockito o que retornar quando um tal método daquele objeto mockado for chamado. Para isso utilizo a classe `Mockito` e os métodos `when` e `thenReturn` quando o controller chamar o método `load` deve retornar um evento pre estabelecido por mim.
 
-{% highlight java %}@Test
+{% highlight java linenos %}@Test
 public void deveRetornarUmEvento() {
 	Evento evento = Dado.umEvento(1L, "BACONSP", "Bacon Conference SP",
 				"Av Paulista", Calendar.getInstance());
@@ -136,7 +136,7 @@ public void deveRetornarUmEvento() {
 
 Criei também uma classe `Dado` para ajudar na "configuração" dos testes;
 
-{% highlight java %}public class Dado {
+{% highlight java linenos %}public class Dado {
 	public static Evento umEvento(Long id, String nome, String descricao,
 			String local, Calendar data) {
 		Evento ev = new Evento();
@@ -152,7 +152,7 @@ Criei também uma classe `Dado` para ajudar na "configuração" dos testes;
 
 E uma classe `Entao` para ajudar nos `Assert`'s.
 
-{% highlight java %}public class Entao {
+{% highlight java linenos %}public class Entao {
 	public static void deveSerOMesmoEvento(Evento evento, Evento eventoRetornado) {
 		Assert.assertEquals(evento.getId(), eventoRetornado.getId());
 		Assert.assertEquals(evento.getNome(), eventoRetornado.getNome());
@@ -165,7 +165,7 @@ E uma classe `Entao` para ajudar nos `Assert`'s.
 
 No teste acima pego apenas um `Evento` do `Result`, agora vamos "pegar" uma lista s idéia é a mesma.
 
-{% highlight java %}@Test
+{% highlight java linenos %}@Test
 public void deveRetornarUmaListaDeEventos() {
 	List eventos = Dado.umaListaCadastrada();
 	Mockito.when(this.eventoDAO.list()).thenReturn(eventos);
@@ -179,7 +179,7 @@ public void deveRetornarUmaListaDeEventos() {
 
 Adiciono o método que popula minha lista de eventos a classe `Dado`;
 
-{% highlight java %}public static List<Evento> umaListaCadastrada() {
+{% highlight java linenos %}public static List<Evento> umaListaCadastrada() {
 	List<Evento> eventos = new ArrayList<Evento>();
 	eventos.add(Dado.umEvento(1L, "BACONSP", "Bacon Conference SP", "Av Paulista", 
 		Calendar.getInstance()));
@@ -190,7 +190,7 @@ Adiciono o método que popula minha lista de eventos a classe `Dado`;
 
 E também o método que verifica se a lista está correta na classe `Entao`:
 
-{% highlight java %}public static void deveSerAMesmaLista(List<Evento> eventos, 
+{% highlight java linenos %}public static void deveSerAMesmaLista(List<Evento> eventos, 
 	List<Evento> eventosRetornados) {
 	Assert.assertEquals(eventos.size(), eventosRetornados.size());
 	Assert.assertTrue(eventos.containsAll(eventosRetornados));
@@ -199,7 +199,7 @@ E também o método que verifica se a lista está correta na classe `Entao`:
 
 Beleza, se rodarmos esses testes eles não vão "funfar", e provavelmente sua IDE vai gritar o por que. Faltam os métodos no controller que vão ser testados. Então vamos a eles. Eles utilizam o Result  e o DAO inserido pelo construtor.
 
-{% highlight java %}public void list() {
+{% highlight java linenos %}public void list() {
 	this.result.include("eventos", this.eventoDAO.list());
 }
 

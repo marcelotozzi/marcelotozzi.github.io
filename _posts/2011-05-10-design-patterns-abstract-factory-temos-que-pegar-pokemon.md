@@ -45,7 +45,7 @@ Pokémon, temos que pegar...
 Tenho este pokémon, <a title="Eevee" href="http://pt.wikipedia.org/wiki/Fam%C3%ADlia_de_Eevee" target="_blank">Eevee</a>, vou querer evoluí-lo. E como eu sou um grande mestre-pokémon ele já está para evoluir. E as evoluções naturais dele são Espeon e Umbreon (peguei as informações <a href="http://pt.wikipedia.org/wiki/Fam%C3%ADlia_de_Eevee" target="_blank">aqui</a>). Porém ele tem restrições, quando ele estiver no ponto de evoluir, se for dia, evoluir para Espeon, se for noite para Umbreon.
 
 Antes de tudo vou precisar do meu Pokémon
-{% highlight java %}public class Pokemon {
+{% highlight java linenos %}public class Pokemon {
 	private String nome;
 
 	public String getNome() {
@@ -59,7 +59,7 @@ Antes de tudo vou precisar do meu Pokémon
 
 E agora precisamos criar uma classe abstrata declarando uma interface genérica para criação das subclasses que fabricam as evoluções do Eevee.
 
-{% highlight java %}
+{% highlight java linenos %}
 abstract class FabricaDeEvolucoesDoEevee {
 	public static void obterFabrica() {
 	}
@@ -70,7 +70,7 @@ abstract class FabricaDeEvolucoesDoEevee {
 
 Mas essa classe precisa retornar uma fabrica de evoluções conforme a regra de evolução acima. Então precisamos alterar  FabricaDeEvolucoesDoEevee e criar as fabricas de cada evolução. Fazemos uma verificação se esta entre  o periodo do dia pra retornar uma fabrica de Espeon, caso não esteja retorna uma fabrica de Umbreon.
 
-{% highlight java %}import java.util.Calendar;
+{% highlight java linenos %}import java.util.Calendar;
 
 abstract class FabricaDeEvolucoesDoEevee {
 	private static Calendar manha;
@@ -101,7 +101,7 @@ abstract class FabricaDeEvolucoesDoEevee {
 {% endhighlight %}
 
 A fabrica de Espeon herdando da classe abstrata.
-{% highlight java %}public class FabricaDeEspeon extends FabricaDeEvolucoesDoEevee {
+{% highlight java linenos %}public class FabricaDeEspeon extends FabricaDeEvolucoesDoEevee {
 	@Override
 	public Pokemon criarEvolucao() {
 		Pokemon espeon = new Pokemon();
@@ -110,7 +110,7 @@ A fabrica de Espeon herdando da classe abstrata.
 	}
 }{% endhighlight %}
 A fabrica de Umbreon herdando da classe abstrata.
-{% highlight java %}public class FabricaDeUmbreon extends FabricaDeEvolucoesDoEevee {
+{% highlight java linenos %}public class FabricaDeUmbreon extends FabricaDeEvolucoesDoEevee {
 	@Override
 	public Pokemon criarEvolucao() {
 		Pokemon umbreon = new Pokemon();
@@ -119,7 +119,7 @@ A fabrica de Umbreon herdando da classe abstrata.
 	}
 }{% endhighlight %}
 Agora vamos fazer uma classe main para testar esse código.
-{% highlight java %}public class AbstractFactoryMain {
+{% highlight java linenos %}public class AbstractFactoryMain {
 	public static void main(String[] args) {
 		FabricaDeEvolucoesDoEevee fabrica = FabricaDeEvolucoesDoEevee.obterFabrica();
 		Pokemon pokemon = fabrica.criarEvolucao();
@@ -139,7 +139,7 @@ Esse pattern é bem simples, não?
 Depois do <a href="http://twitter.com/#!/diegoponci" target="_blank">@diegoponc</a>i ficar me trollando no GTalk falando que "tinha que retornar o tipo específico...<strong>#mimimi</strong>" as classes foram alteradas e ficaram assim:
 
 Criei duas classes específicas de cada tipo;
-{% highlight java %}public class Umbreon extends Pokemon {
+{% highlight java linenos %}public class Umbreon extends Pokemon {
 	private String nome = "Umbreon";
 
 	@Override
@@ -157,11 +157,11 @@ public class Espeon extends Pokemon {
 	}
 }{% endhighlight %}
 Assim transformando a classe Pokemon com apenas um método abstract;
-{% highlight java %}abstract class Pokemon {
+{% highlight java linenos %}abstract class Pokemon {
 	abstract String getNome();
 }{% endhighlight %}
 E alterei as Factories de cada tipo;
-{% highlight java %}public class FabricaDeUmbreon extends FabricaDeEvolucoesDoEevee {
+{% highlight java linenos %}public class FabricaDeUmbreon extends FabricaDeEvolucoesDoEevee {
 	@Override
 	public Umbreon criarEvolucao() {
 		return new Umbreon();
