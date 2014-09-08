@@ -1,9 +1,19 @@
 ---
 layout: post
 title: Testando JSON e XML nos Results do VRaptor
+categories: [Java]
+tags:
+- java
+- json
+- junit
+- mock
+- mockito
+- tdd
+- vraptor
+- xml
 ---
 
-![json]({{ site.url }}/assets/designalldll-300x300.jpg)
+![json]({{ site.url }}/assets/images/designalldll-300x300.jpg)
 
 Antes de tudo uma historinha! Um dia desses queria testar  alguns métodos que criei utilizando <a href="http://vraptor.caelum.com.br/" target="_blank">VRaptor</a>, até ai tudo bem. Chamando eles num teste unitário eu conseguiria facilmente pois eu consigo "pegar" os objetos que o controller insere na resposta que vem dentro do `Result`. Porém me deparei com os testes que retornavam objetos serializados em <a href="http://www.json.org/" target="_blank">JSON</a> dentro do Result.
 
@@ -202,4 +212,4 @@ Agora, se rodarmos os testes,deveria funfar. Se não funfar #FUUUUUU.
 
 Nessa primeira parte o terreno esta preparado. No próximo post vou mostrar como fiz pra validar o retorno de JSON e de XML(eca!).
 
-![padrao]({{ site.url }}/assets/epic-meal-time-bacon.jpg)
+![padrao]({{ site.url }}/assets/images/epic-meal-time-bacon.jpg)

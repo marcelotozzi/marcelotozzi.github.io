@@ -1,11 +1,21 @@
 ---
 layout: post
 title: Testando JSON e XML nos Results do VRaptor - Parte 2
+categories: [Java]
+tags:
+- java
+- json
+- junit
+- mock
+- mockito
+- tdd
+- vraptor
+- xml
 ---
 
-![padrao]({{ site.url }}/assets/jason_up.jpg)
+![padrao]({{ site.url }}/assets/images/jason_up.jpg)
 
-Continuando com o código do <a title="Testando JSON e XML nos Results do VRaptor" href="/blog/testando-json-e-xml-nos-results-do-vraptor/" target="_blank">post anterior</a> ...
+Continuando com o código do <a title="Testando JSON e XML nos Results do VRaptor" href="/java/2011/07/15/testando-json-e-xml-nos-results-do-vraptor/" target="_blank">post anterior</a> ...
 
 Agora é criar uma classe de testes separada para os testes de serialização. Desta vez usei o `MockSerializationResult` que é o mock que o VRaptor 3.4 disponibiliza e como eu disse no post anterior não existia no SNAPSHOT 3.3.
 

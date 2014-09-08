@@ -1,9 +1,10 @@
 # Dependencies
 markdown:         redcarpet
-rouge:         true
+highlighter: 	  pygments
+highlighter_style: monokai
 
 # Permalinks
-permalink:        pretty
+permalink: /blog/:title
 
 # Setup
 title:            Marcelo Tozzi

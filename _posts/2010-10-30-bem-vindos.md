@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Bem vindos!"
+categories: [Pessoal]
+tags:
+- pessoal
 ---
 Nesse blog pretendo postar minhas opiniões, coisas interessantes que descobrir e tudo mais.
 
