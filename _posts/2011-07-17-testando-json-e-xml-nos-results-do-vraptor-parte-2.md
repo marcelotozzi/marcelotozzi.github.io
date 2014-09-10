@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Testando JSON e XML nos Results do VRaptor - Parte 2
-categories: [Testes,Java]
+categories: [Teste,Java]
 tags:
 - java
 - json
