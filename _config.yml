@@ -29,3 +29,6 @@ comments:
   provider: disqus
   disqus:
     short_name: marcelo-tozzi
+
+gems:
+  - jekyll-redirect-from
