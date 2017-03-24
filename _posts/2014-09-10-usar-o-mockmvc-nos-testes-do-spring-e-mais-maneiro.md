@@ -5,7 +5,7 @@ categories: Teste Java
 tags:
 - java
 - spring
-image: /assets/article_images/2014-11-30-mediator_features/night-track.JPG
+image: /assets/images/background/night-track.JPG
 ---
 Não sei como vocês testam seus controllers feitos usando Spring <s>ou se testam :P</s>, mas normalmente o que eu vejo sendo feito é algo parecido com isso. 
 

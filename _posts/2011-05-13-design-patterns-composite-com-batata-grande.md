@@ -6,7 +6,7 @@ tags:
 - design patterns
 - java
 - padrões estruturais
-image: /assets/article_images/2014-11-30-mediator_features/night-track.JPG
+image: /assets/images/background/night-track.JPG
 ---
 Depois do **<a title="Design Patterns – Abstract Factory, temos que pegar, Pokémon" href="/blog/design-patterns-abstract-factory-temos-que-pegar-pokemon/" target="_blank">Abstract Factory</a>** vamos para outro pattern simples. O **Composite**.
 
@@ -24,7 +24,7 @@ O cliente usa a interface para interagir  com os objetos do componente composto
 
 Esse pattern deixa mais fácil  adicionar novos componentes sem ter que alterar os "clientes" que usam os componentes, porém isso pode atrapalhar se você quiser limitar quais tipos de objetos podem fazer parte de uma composição. Ai você terá que usar verificações e testes em tempo de execução.
 
-![]({{ site.url }}/assets/images/enjoado_de_big_mac-300x237.jpg)
+![](/assets/article_images/2011-05-13-design-patterns-composite-com-batata-grande/enjoado_de_big_mac-300x237.jpg)
 
 Batata frita grande acompanha, senhor?
 ======================================

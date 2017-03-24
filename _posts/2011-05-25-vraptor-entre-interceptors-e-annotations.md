@@ -3,7 +3,7 @@ layout: post
 title: VRaptor - Entre interceptors e annotations!
 categories: Java
 tags: annotation interceptor java vraptor
-image: /assets/article_images/2014-11-30-mediator_features/night-track.JPG
+image: /assets/images/background/night-track.JPG
 ---
 Atualmente estou re-escrevendo meu TCC, pois na época que fizemos o grupo que desenvolveu não estava aberto a idéia de usar TDD e afins, isso me deixou incomodado.
 
@@ -38,7 +38,7 @@ public boolean accepts(ResourceMethod method) {
 
 method.getMethod() retorna o método java que está sendo chamado e method.getResource().getType() a classe que está sendo executada.
 
-![]({{ site.url }}/assets/images/philosoraptor-300x300.jpg)
+![](/assets/article_images/2011-05-25-vraptor-entre-interceptors-e-annotations/philosoraptor-300x300.jpg)
 
 Porém se eu precisar interceptar e liberar mais métodos e controllers nesse accepts, ficaria uma coisa bem feia e chata de mexer. Então o que fiz?
 

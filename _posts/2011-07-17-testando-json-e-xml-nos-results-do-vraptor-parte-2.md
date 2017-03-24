@@ -11,12 +11,12 @@ tags:
 - tdd
 - vraptor
 - xml
-image: /assets/article_images/2014-11-30-mediator_features/night-track.JPG
+image: /assets/images/background/night-track.JPG
 ---
 
-![]({{ site.url }}/assets/images/jason_up.jpg)
+![](/assets/article_images/2011-07-17-testando-json-e-xml-nos-results-do-vraptor-parte-2/jason_up.jpg)
 
-Continuando com o código do <a title="Testando JSON e XML nos Results do VRaptor" href="/java/2011/07/15/testando-json-e-xml-nos-results-do-vraptor/" target="_blank">post anterior</a> ...
+Continuando com o código do <a title="Testando JSON e XML nos Results do VRaptor" href="/teste/java/2011/07/15/testando-json-e-xml-nos-results-do-vraptor.html" target="_blank">post anterior</a> ...
 
 Agora é criar uma classe de testes separada para os testes de serialização. Desta vez usei o `MockSerializationResult` que é o mock que o VRaptor 3.4 disponibiliza e como eu disse no post anterior não existia no SNAPSHOT 3.3.
 
