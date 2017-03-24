@@ -11,9 +11,10 @@ tags:
 - tdd
 - vraptor
 - xml
+image: /assets/article_images/2014-11-30-mediator_features/night-track.JPG
 ---
 
-![padrao]({{ site.url }}/assets/images/jason_up.jpg)
+![]({{ site.url }}/assets/images/jason_up.jpg)
 
 Continuando com o código do <a title="Testando JSON e XML nos Results do VRaptor" href="/java/2011/07/15/testando-json-e-xml-nos-results-do-vraptor/" target="_blank">post anterior</a> ...
 

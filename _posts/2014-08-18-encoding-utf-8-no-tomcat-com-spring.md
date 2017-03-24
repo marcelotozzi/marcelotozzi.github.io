@@ -1,11 +1,12 @@
 ---
 layout: post
 title:  "Encoding UTF-8 no Tomcat com Spring"
-categories: [Java]
+categories: Java
 tags:
 - java
 - encoding
 - spring
+image: /assets/article_images/2014-11-30-mediator_features/night-track.JPG
 ---
 
 Você esta lá, criando sua aplicação com Spring, Hibernate e afins. Seguindo aquele padrão que quase todo mundo usa <s>#sad</s> ou usou. 

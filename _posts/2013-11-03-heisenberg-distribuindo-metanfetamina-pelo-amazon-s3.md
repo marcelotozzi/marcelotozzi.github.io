@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Heisenberg distribuindo metanfetamina pelo Amazon S3"
-categories: [Shell] 
+categories: S3 AWS Shell 
 tags: 
 - amazon
 - breaking bad
@@ -11,10 +11,11 @@ tags:
 - s3
 - los pollos hermanos
 - log
+image: /assets/article_images/2014-11-30-mediator_features/night-track.JPG
 ---
 ***OBS: spoilers de Breaking Bad, se você não assistiu, não leia!***
 
-![padrao]({{ site.url }}/assets/images/walterwhite.jpg)
+![]({{ site.url }}/assets/images/walterwhite.jpg)
 
 Digamos que eu sou um professor de química e estou precisando de grana pra sustentar minha família, minha mulher esta grávida e meu salário é uma porcaria. Pra ajudar, descobri que estou com câncer.
 Meu cunhado é policial e me mostra quanto dinheiro ele aprendeu na última "batida policial" de metanfetamina que ele fez.
@@ -103,7 +104,7 @@ Save settings? [y/N] y
 Configuration saved to '/Users/heisenberg/.s3cfg'
 {% endhighlight %}
 
-![padrao]({{ site.url }}/assets/images/hank.gif)
+![]({{ site.url }}/assets/images/hank.gif)
 
 Agora, completando o envio do lote usando o s3cmd, tomara que não seja interceptado pelo meu cunhado do DEA:
 
@@ -155,7 +156,7 @@ echo "-- Enviado!"
 
 {% endhighlight %}
 
-![padrao]({{ site.url }}/assets/images/money.gif)
+![]({{ site.url }}/assets/images/money.gif)
 
 Pronto, agora é guardar a grana para a minha família. O meu produto faz sucesso na Europa, distribuido pela Madrigal e conhecido como "Blue Sky".
 
@@ -165,6 +166,6 @@ Eu faço isso pela minha família.
 
 Você pode [baixar o processo]({{ site.url }}/downloads/processo.sh) de envio.
 
-![padrao]({{ site.url }}/assets/images/saymyname.gif)
+![]({{ site.url }}/assets/images/saymyname.gif)
 
 *PS: Brincadeiras a parte, eu tive que fazer algo parecido dias atrás, para guardar logs de acesso de aplicação no S3.*

@@ -1,11 +1,9 @@
 ---
 layout: post
 title: Neo4j - Quem você conhece no conjunto?
-categories: [NoSQL,Java]
-tags:
-- java
-- nosql
-- neo4j
+categories: NoSQL Java
+tags: java nosql neo4j
+image: /assets/article_images/2014-11-30-mediator_features/night-track.JPG
 ---
 Quando estava na faculdade tinha aula de grafos e pensava: "Pow, beleza, busca em profundidade, busca em largura, entendi, mas quando vou usar isso?". Esta aí! O <a title="Neo4j" href="http://neo4j.org/" target="_blank">Neo4j</a> respondendo minha pergunta.
 
@@ -23,11 +21,11 @@ Vamos dar uma "testada" nesse treco então:
 Corre, Paul Tergat, corre!
 -------------------------
 
-![padrao]({{ site.url }}/assets/images/paul-tergat-300x237.jpg)
+![](/assets/images/paul-tergat-300x237.jpg)
 
 Vamos então fazer algo em Java. Eu sei que você "marotamente" já fez o <a href="http://neo4j.org/download">download do Neo4j</a> e já criou um projeto no <a href="http://www.eclipse.org/" target="_blank">Eclipse</a> e jogou nele as libs.
 
-![padrao]({{ site.url }}/assets/images/libs.jpg)
+![]({{ site.url }}/assets/images/libs.jpg)
 
 Agora vamos criar um Service que ira acessar nosso banco de dados em grafo.</p>
 

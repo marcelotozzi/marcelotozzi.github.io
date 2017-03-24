@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Bem vindos!"
-categories: [Pessoal]
-tags:
-- pessoal
+categories: Pessoal
+tags: pessoal
+image: /assets/article_images/2014-11-30-mediator_features/night-track.JPG
 ---
 Nesse blog pretendo postar minhas opiniões, coisas interessantes que descobrir e tudo mais.
 

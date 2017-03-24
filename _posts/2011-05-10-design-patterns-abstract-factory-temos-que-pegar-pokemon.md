@@ -1,12 +1,9 @@
 ---
 layout: post
 title: Design Patterns - Abstract Factory, temos que pegar, Pokémon
-categories: [Java,Design Patterns,Padrões de Criacão]
-tags:
-- java
-- design patterns
-- mimimi
-- padrões de criacão
+categories:  Java "Design Patterns" "Padrões de Criacão"
+tags: java design patterns mimimi padrões de criacão
+image: /assets/article_images/2014-11-30-mediator_features/night-track.JPG
 ---
 
 Voltando com os posts, vou começar uma série falando sobre os padrões de projeto do livro <a href="http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/ref=sr_1_1?s=books&ie=UTF8&qid=1305031310&sr=1-1" target="_blank">Design Patterns</a> do GoF(Gang of Four).
@@ -40,7 +37,7 @@ Mais do que ficar explicando, vamos para o que importa.Mas como eu gosto de exem
 Pokémon, temos que pegar...
 ---------------------------
 
-![eevee]({{ site.url }}/assets/images/eevee.gif)
+![]({{ site.url }}/assets/images/eevee.gif)
 
 Tenho este pokémon, <a title="Eevee" href="http://pt.wikipedia.org/wiki/Fam%C3%ADlia_de_Eevee" target="_blank">Eevee</a>, vou querer evoluí-lo. E como eu sou um grande mestre-pokémon ele já está para evoluir. E as evoluções naturais dele são Espeon e Umbreon (peguei as informações <a href="http://pt.wikipedia.org/wiki/Fam%C3%ADlia_de_Eevee" target="_blank">aqui</a>). Porém ele tem restrições, quando ele estiver no ponto de evoluir, se for dia, evoluir para Espeon, se for noite para Umbreon.
 

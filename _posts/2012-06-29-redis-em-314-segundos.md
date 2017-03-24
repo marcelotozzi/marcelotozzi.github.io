@@ -1,16 +1,17 @@
 ---
 layout: post
 title: Redis em 314 segundos
-categories: [NoSQL,Java]
+categories: NoSQL Java
 tags:
 - c++
 - key-value
 - nosql
 - redis
+image: /assets/article_images/2014-11-30-mediator_features/night-track.JPG
 ---
 Um fast post pra desenferrujar.
 
-![padrao]({{ site.url }}/assets/images/keymaster.jpeg)
+![]({{ site.url }}/assets/images/keymaster.jpeg)
 Se você tem vivido dentro de uma caverna nos últimos anos não vai saber do que se trata o termo NoSQL e o que diabos é Redis. <s>(Mas no fundo você sabe, salvar dados como arquivo, memória, etc)</s>
 
 Se você ainda não buscou <a href="http://redis.io/" target="_blank">Redis</a> no Google pra saber do que estou falando eu digo: Redis é um banco de dados chave-valor open-source escrito em C que pode armazenar string, hashes, lists, sets and sorted sets. (copiei do site do <a href="http://redis.io/" target="_blank">Redis</a> :D)
